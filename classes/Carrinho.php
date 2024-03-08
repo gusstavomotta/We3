@@ -2,20 +2,21 @@
 
 class Carrinho{
 
-    private array $carrinho_compras;
+    private static array $carrinho_compras = [];
 
     public function __construct(){
         
     }
     public function getCarrinho(){
-        return $this->carrinho_compras;
+        return self::$carrinho_compras;
     }
 
     /**
      * Adiciona um produto no carrinho de compras
      */
     public function adicionarProdutoAoCarrinho(Produto $produto){
-        $this->carrinho_compras = [$produto];
+        array_push(self::$carrinho_compras, $produto);
+        print_r("Produto adicionado com sucesso!");
     }
     /**
      * 
@@ -23,9 +24,10 @@ class Carrinho{
      */
     public function removerProdutoDoCarrinho(int $id){
         
-        foreach ($this->carrinho_compras as $chave => $valor) {
-            if ($valor['id'] == $id) {
-                unset($this->carrinho_compras[$chave]);
+        foreach (self::$carrinho_compras as $chave => $produto) {
+            if ($produto->getIdProduto() == $id) {
+                unset(self::$carrinho_compras[$chave]);
+                print_r("Removido com sucesso!");
                 break;
             }
         }
@@ -34,17 +36,15 @@ class Carrinho{
      * Conta o número de produtos dentro do carrinho de compras
      */
     public function contarQtdProdutos(){
-        return count($this->carrinho_compras);
+        return count(self::$carrinho_compras);
     }
     /**
      * Realiza a soma do subtotal do carrinho
      */
     public function somarSubtotal(){
-
         $subtotal = 0;
-        foreach ($this->carrinho_compras as $dados){
-            $subtotal += $dados['preco'];
-
+        foreach (self::$carrinho_compras as $produto){
+            $subtotal += $produto->getPreco();
         }
         return $subtotal;
     }

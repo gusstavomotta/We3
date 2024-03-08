@@ -24,7 +24,7 @@ class Usuario {
     public function getCpf(){
         return $this->cpf;
     }
-    public function idPessoa(){
+    public function getIdPessoa(){
         return $this->idpessoa;
     }
     public function setNome(string $nome){
