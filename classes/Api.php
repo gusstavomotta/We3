@@ -2,13 +2,12 @@
 
 class Api{
 
-    public function Requisicao($cpf, $email)
+    public static function Requisicao(String $cpf, String $email)
     {
-         $urlBase = 'https://ah.we.imply.com';
-         $url = "$urlBase/$cpf/$email";
+         $urlBase = "https://ah.we.imply.com/loginDesafio3/";
+         $url = "$urlBase/{$cpf}/{$email}";
 
          $ch = curl_init($url);
-
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
          $response = curl_exec($ch);
