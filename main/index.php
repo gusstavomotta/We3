@@ -1,8 +1,8 @@
 
 <?php 
  
-require '/home/imply/Documentos/GitHub/We3/classes/Requisicao.php';
-require '/home/imply/Documentos/GitHub/We3/classes/Carrinho.php';
+require __DIR__ . '/../classes/Requisicao.php';
+require __DIR__ . '/../classes/Carrinho.php';
 
 $carro  = new Carrinho ();
 
