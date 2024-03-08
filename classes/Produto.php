@@ -5,7 +5,6 @@ class Produto {
     private $idproduto;
     private $dscproduto;
     private $preco;
-    private array $lista_produtos;
     
     public function __construct(string $idproduto, string $dscproduto, float $preco){
 
@@ -23,9 +22,6 @@ class Produto {
     public function getPreco(){
         return $this->preco;
     }
-    public function getListaProdutos(){
-        return $this->lista_produtos;
-    }
     public function setIdProduto(string $idproduto){
         $this->idproduto = $idproduto;
     }
@@ -36,10 +32,4 @@ class Produto {
         $this->preco = $preco;
     }
 
-    public function adicionarProdutoNaListaDeProdutos(){
-        
-    }
-    public function retornarListaProdutos(){
-        
-    }
 }

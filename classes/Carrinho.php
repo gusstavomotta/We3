@@ -11,11 +11,8 @@ class Carrinho{
         return $this->carrinho_compras;
     }
 
-    public function adicionarProdutoAoCarrinho(){
-        
-    }
-    public function retornaCarrinhoCompras(){
-        
+    public function adicionarProdutoAoCarrinho(Produto $produto){
+        $this->carrinho_compras = [$produto];
     }
     
 }
