@@ -11,12 +11,15 @@ class Carrinho{
         return $this->carrinho_compras;
     }
 
+    /**
+     * Adiciona um produto no carrinho de compras
+     */
     public function adicionarProdutoAoCarrinho(Produto $produto){
         $this->carrinho_compras = [$produto];
     }
     /**
      * 
-     * Verifica se essa função pode funcionar desse jeito
+     * Percorre a lista de compras, procura o ID passado e remove da lista o produto
      */
     public function removerProdutoDoCarrinho(int $id){
         
@@ -27,11 +30,15 @@ class Carrinho{
             }
         }
     }
-
+    /**
+     * Conta o número de produtos dentro do carrinho de compras
+     */
     public function contarQtdProdutos(){
         return count($this->carrinho_compras);
     }
-
+    /**
+     * Realiza a soma do subtotal do carrinho
+     */
     public function somarSubtotal(){
 
         $subtotal = 0;

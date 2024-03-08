@@ -1,7 +1,9 @@
 <?php
 
 class Api{
-
+    /**
+     * Chama a API e retorna um usuário
+     */
     public static function requisicaoLogin(String $cpf, String $email)
     {
          $urlBase = 'https://ah.we.imply.com/loginDesafio3';
@@ -30,7 +32,9 @@ class Api{
 
         return $decodificado;
     }
-
+    /**
+     * Chama a API e retorna uma json de produtos
+     */
     public static function requisicaoProdutos(){
 
         $url = 'https://ah.we.imply.com/getProdutos';
@@ -59,6 +63,3 @@ class Api{
 
     }
 }
-
-
-

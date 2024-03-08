@@ -34,6 +34,9 @@ class Produto {
     public function setPreco(float $preco){
         $this->preco = $preco;
     }
+    /**
+     * Adiciona um produto na lista de produtos
+     */
     public static function adicionarProdutoNaListaProdutos(Produto $produto){
         self::$lista_produtos = [$produto];
     }
