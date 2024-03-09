@@ -7,9 +7,9 @@ class Api{
     public static function requisicaoLogin(String $cpf, String $email)
     {
          $urlBase = 'https://ah.we.imply.com/loginDesafio3';
-         $url = "$urlBase/$cpf/$email";
+         $urlCompleta= "$urlBase/$cpf/$email";
 
-         $ch = curl_init($url);
+         $ch = curl_init($urlCompleta);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
          $response = curl_exec($ch);

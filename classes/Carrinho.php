@@ -3,7 +3,6 @@
 class Carrinho{
 
     private static array $carrinho_compras = [];
-
     public function __construct(){
         
     }
@@ -16,7 +15,6 @@ class Carrinho{
      */
     public function adicionarProdutoAoCarrinho(Produto $produto){
         array_push(self::$carrinho_compras, $produto);
-        print_r("Produto adicionado com sucesso!");
     }
     /**
      * 
@@ -27,7 +25,6 @@ class Carrinho{
         foreach (self::$carrinho_compras as $chave => $produto) {
             if ($produto->getIdProduto() == $id) {
                 unset(self::$carrinho_compras[$chave]);
-                print_r("Removido com sucesso!");
                 break;
             }
         }

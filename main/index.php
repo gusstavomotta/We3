@@ -24,14 +24,14 @@ $pessoa1 = new Usuario("gustavo", "gumotta2908@hotmail.com", "04295643092", "123
 $produto = new Produto("12120", "geleia", 15.50);
 $produto2 = new Produto("12121", "geleia", 15.50);
 
-Produto::adicionarProdutoNaListaProdutos($produto);
+// Produto::adicionarProdutoNaListaProdutos($produto);
 
 var_dump($produto);
 var_dump($pessoa1->getCpf());
 var_dump($pessoa1->getEmail());
 var_dump($pessoa1->getNome());
 var_dump($pessoa1->getIdPessoa());
-var_dump(Produto::getProdutos());
+// var_dump(Produto::getProdutos());
 
 $carro->adicionarProdutoAoCarrinho($produto);
 $carro->adicionarProdutoAoCarrinho($produto2);

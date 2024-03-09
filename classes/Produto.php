@@ -5,7 +5,7 @@ class Produto {
     private $idproduto;
     private $dscproduto;
     private $preco;
-    private static array $lista_produtos = [];
+    // private static array $lista_produtos = [];
     public function __construct(string $idproduto, string $dscproduto, float $preco){
 
         $this->idproduto = $idproduto;
@@ -22,9 +22,9 @@ class Produto {
     public function getPreco(){
         return $this->preco;
     }
-    public static function getProdutos(){
-        return self::$lista_produtos;
-    }
+    // public static function getProdutos(){
+    //     return self::$lista_produtos;
+    // }
     public function setIdProduto(string $idproduto){
         $this->idproduto = $idproduto;
     }
@@ -37,7 +37,7 @@ class Produto {
     /**
      * Adiciona um produto na lista de produtos
      */
-    public static function adicionarProdutoNaListaProdutos(Produto $produto){
-        array_push(self::$lista_produtos, $produto);
-    }
+    // public static function adicionarProdutoNaListaProdutos(Produto $produto){
+    //     array_push(self::$lista_produtos, $produto);
+    // }
 }
