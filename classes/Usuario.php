@@ -39,4 +39,12 @@ class Usuario {
     public function setIdPessoa(string $idpessoa){
         $this->idpessoa = $idpessoa;
     }
+    public function __toString(){
+        $ret = "\nId do usuário: " . $this->getIdPessoa() . "\n";
+        $ret .= "Nome do usuário: " . $this->getNome() . "\n";
+        $ret .= "Cpf do usuário: " . $this->getCpf() . "\n";
+        $ret .= "Email do usuário: " . $this->getEmail() . "\n";
+
+        return (String) $ret;
+}
 }

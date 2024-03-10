@@ -32,4 +32,11 @@ class Produto {
         $this->preco = $preco;
     }
 
+    public function __toString(){
+            $ret = "\nId do produto: " . $this->getIdProduto() . "\n";
+            $ret .= "Descrição do produto: " . $this->getDscProduto() . "\n";
+            $ret .= "Preço do produto: " . $this->getPreco() . "\n";
+            return (String) $ret;
+    }
+        
 }
