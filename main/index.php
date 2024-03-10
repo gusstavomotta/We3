@@ -7,37 +7,58 @@ require __DIR__ . '/../classes/Usuario.php';
 require __DIR__ . '/../classes/Produto.php';
 
 
-$carro  = new Carrinho ();
+$pessoa = Api::requisicaoLogin('65948272788', 'jefersongvargas2009@hotmail.com');
 
-$pessoa = Api::requisicaoLogin ('65948272788', 'jefersongvargas2009@hotmail.com');
-foreach ($pessoa as $dados){
-     var_dump($dados); 
+if ($pessoa && isset($pessoa['result']['results'][0])) {
+    $dados = $pessoa['result']['results'][0];
+    
+    $usuario = new Usuario(
+        $dados['nome'],
+        $dados['email'],
+        $dados['cpf'],
+        $dados['idpessoa']
+    );
+} else {
+    echo "Não foi possível realizar o login, tente novamente!";
 }
 
-// $produtos = Api::requisicaoProdutos();
-// foreach ($produtos as $produto){
-//      // $carro->adicionarProdutoAoCarrinho($produto);
-//      var_dump($produto);
-// }
+$produtos = Api::requisicaoProdutos();
 
-$pessoa1 = new Usuario("gustavo", "gumotta2908@hotmail.com", "04295643092", "123231");
-$produto = new Produto("12120", "geleia", 15.50);
-$produto2 = new Produto("12121", "geleia", 15.50);
+if ($produtos && isset($produtos['result'])) {
 
-// Produto::adicionarProdutoNaListaProdutos($produto);
+    $lista_produtos_api = $produtos['result'];
+    $lista_de_produtos = [];
 
-var_dump($produto);
-var_dump($pessoa1->getCpf());
-var_dump($pessoa1->getEmail());
-var_dump($pessoa1->getNome());
-var_dump($pessoa1->getIdPessoa());
-// var_dump(Produto::getProdutos());
+    foreach ($lista_produtos_api as $produto_dados) {
+        $produto = new Produto(
+            $produto_dados['idproduto'],
+            $produto_dados['dscproduto'],
+            floatval($produto_dados['preco']) 
+        );
 
-$carro->adicionarProdutoAoCarrinho($produto);
-$carro->adicionarProdutoAoCarrinho($produto2);
+        array_push($lista_de_produtos, $produto);
+    }
 
-var_dump($carro->contarQtdProdutos());
-var_dump($carro->somarSubtotal());
-var_dump($carro->getCarrinho());
-var_dump($carro->removerProdutoDoCarrinho("12120"));
-var_dump($carro->getCarrinho());
+} else {
+    echo "Não foi possível retornar os produtos!";
+}
+
+var_dump($usuario->getCpf());
+var_dump($usuario->getEmail());
+var_dump($usuario->getNome());
+var_dump($usuario->getIdPessoa());
+
+$carro = new Carrinho();
+foreach ($lista_de_produtos as $produto){
+     $carro->adicionarProdutoAoCarrinho($produto);
+}
+
+var_dump("\n" . "Quantidade de produtos: " .$carro->contarQtdProdutos(). "\n");
+var_dump("Subtotal: " . $carro->somarSubtotal() . "\n");
+
+$lista_carrinho = $carro->getCarrinho();
+
+foreach ($lista_carrinho as $produto){
+     var_dump($produto->getDscProduto());
+
+}
