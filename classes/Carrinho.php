@@ -20,14 +20,14 @@ class Carrinho{
      * 
      * Percorre a lista de compras, procura o ID passado e remove da lista o produto
      */
-    public function removerProdutoDoCarrinho(int $id){
+    public function removerProdutoDoCarrinho(String $id){
         
         foreach (self::$carrinho_compras as $chave => $produto) {
             if ($produto->getIdProduto() == $id) {
                 unset(self::$carrinho_compras[$chave]);
-                break;
             }
         }
+
     }
     /**
      * Conta o número de produtos dentro do carrinho de compras

@@ -57,8 +57,14 @@ var_dump("\n" . "Quantidade de produtos: " .$carro->contarQtdProdutos(). "\n");
 var_dump("Subtotal: " . $carro->somarSubtotal() . "\n");
 
 $lista_carrinho = $carro->getCarrinho();
-
 foreach ($lista_carrinho as $produto){
-     var_dump($produto->getDscProduto());
+     var_dump($produto);
+
+}
+
+$carro->removerProdutoDoCarrinho("23b20c3e763a21d3d876b0a5d2cc6aa603e09118");
+$lista_carrinho = $carro->getCarrinho();
+foreach ($lista_carrinho as $produto){
+     var_dump($produto);
 
 }
