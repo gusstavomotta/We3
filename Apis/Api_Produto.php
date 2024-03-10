@@ -9,8 +9,8 @@ function WebServiceExec($params, $data){
              'p.preco'
         ])
         ->from('pdv_produto p')
-        ->whereAND([
-             'p.preco' => 50
+        ->whereNotAND([
+             'p.preco' => 0
         ])
 		->groupBy([1,2,3])
         ->fetchAll();
