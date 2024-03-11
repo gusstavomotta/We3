@@ -70,7 +70,7 @@ class Usuario
                 $dados['idpessoa']
             );
         } else {
-            echo "Não foi possível realizar o login, tente novamente!";
+           return false;
         }
         return $usuario;
     }
