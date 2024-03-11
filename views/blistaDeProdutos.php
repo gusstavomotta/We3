@@ -27,8 +27,10 @@ require "/home/imply/Documentos/GitHub/We3/models/Requisicao.php";
                 || $produto->getPreco() == 100 
                 || $produto->getPreco() == 80 
                 || $produto->getPreco() == 10){
+                    echo "<br>";
+                    var_dump($produto->__toString());
+                    echo "<br>";
 
-                    var_dump($produto->getDscProduto());
                 }
         }
         ?>
