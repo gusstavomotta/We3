@@ -21,8 +21,15 @@ require "/home/imply/Documentos/GitHub/We3/models/Requisicao.php";
         $lista_de_produtos = Produto::verificaRetornaArrayProdutos($produtos_api);
 
         foreach ($lista_de_produtos as $produto) {
-            if ($produto->getPreco() == 20)
-                var_dump($produto->__toString());
+            if (
+                $produto->getPreco() == 20 
+                || $produto->getPreco() == 50 
+                || $produto->getPreco() == 100 
+                || $produto->getPreco() == 80 
+                || $produto->getPreco() == 10){
+
+                    var_dump($produto->getDscProduto());
+                }
         }
         ?>
     </p>
