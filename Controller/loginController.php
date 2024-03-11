@@ -16,7 +16,7 @@ if ($usuario != false) {
     $_SESSION["id"] = $usuario->getIdPessoa();
     $_SESSION["nome"] = $usuario->getNome();
 
-    header("location: blistaDeProdutos.php");
+    header("location: ../views/blistaDeProdutos.php");
 } else {
     echo "Cpf ou email inválidos, tente novamente!";
 }

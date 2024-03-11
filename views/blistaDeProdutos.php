@@ -1,9 +1,6 @@
-<?php
-session_start();
-
-require __DIR__  ."/../Controller/produtoController.php";
+<?php session_start();
+require __DIR__ . "/../Controller/produtoController.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
