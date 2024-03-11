@@ -1,6 +1,7 @@
 <?php
-require "/home/imply/Documentos/GitHub/We3/models/Requisicao.php";
-require "/home/imply/Documentos/GitHub/We3/models/Produto.php";
+require __DIR__ . "/../models/Requisicao.php";
+require __DIR__ . "/../models/Produto.php";
+
 function listar_produtos()
 {
     $produtos_api = Requisicao::requisicaoProdutos();

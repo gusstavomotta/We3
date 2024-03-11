@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require "/home/imply/Documentos/GitHub/We3/Controller/produtoController.php";
+require __DIR__  ."/../Controller/produtoController.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ require "/home/imply/Documentos/GitHub/We3/Controller/produtoController.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
     <title>Pagina de produtos</title>
 </head>
 

@@ -1,8 +1,8 @@
 
 <?php
 session_start();
-require "/home/imply/Documentos/GitHub/We3/models/Requisicao.php";
-require "/home/imply/Documentos/GitHub/We3/models/Usuario.php";
+require __DIR__ . "/../models/Requisicao.php";
+require __DIR__ . "/../models/Usuario.php";
 
 $cpf = $_POST["cpf"];
 $email = $_POST["email"];
