@@ -13,14 +13,15 @@
 <body>
     <h1>Login</h1>
     <form action="alogin.php" method="post">
-        <label for="email">E-mail</label>
-        <br>
-        <input type="text" name="email" id="email">
-        <br>
+        
         <br>
         <label for="cpf">Cpf</label>
         <br>
         <input type="text" name="cpf" id="cpf">
+        <br>
+        <label for="email">E-mail</label>
+        <br>
+        <input type="text" name="email" id="email">
         <br>
         <br>
         <input type="submit" value="Login">
