@@ -4,9 +4,7 @@ class Carrinho
 {
 
     private static array $carrinho_compras = [];
-    public function __construct()
-    {
-    }
+
     public function getCarrinho()
     {
         return self::$carrinho_compras;
