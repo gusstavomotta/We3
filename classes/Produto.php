@@ -39,4 +39,25 @@ class Produto {
             return (String) $ret;
     }
         
+    public static function verificaRetornaArrayProdutos($produtos){
+        if ($produtos && isset($produtos['result'])) {
+
+            $lista_produtos_api = $produtos['result'];
+            $lista_de_produtos = [];
+        
+            foreach ($lista_produtos_api as $produto_dados) {
+                $produto = new Produto(
+                    $produto_dados['idproduto'],
+                    $produto_dados['dscproduto'],
+                    floatval($produto_dados['preco']) 
+                );
+        
+                array_push($lista_de_produtos, $produto);
+            }
+        
+        } else {
+            echo "Não foi possível retornar os produtos!";
+        }
+        return $lista_de_produtos;
+    }
 }
