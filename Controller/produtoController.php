@@ -9,7 +9,8 @@ function listar_produtos()
 
     foreach ($lista_de_produtos as $produto) {
         echo "<br>";
-        var_dump($produto->__toString());
+        print_r("Preço do produto: " . $produto->getPreco());
+        print_r("Descrição do produto: " . $produto->getDscProduto());
         echo "<br>";
     }
 }
