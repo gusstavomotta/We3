@@ -15,7 +15,7 @@ require "/home/imply/Documentos/GitHub/We3/models/Requisicao.php";
 
 <body>
     <h1>Lista de produtos</h1>
-    <p>
+    <h3>
         <?php
         $produtos_api = Requisicao::requisicaoProdutos();
         $lista_de_produtos = Produto::verificaRetornaArrayProdutos($produtos_api);
@@ -28,13 +28,13 @@ require "/home/imply/Documentos/GitHub/We3/models/Requisicao.php";
                 || $produto->getPreco() == 80 
                 || $produto->getPreco() == 10){
                     echo "<br>";
-                    var_dump($produto->__toString());
+                    print_r($produto->__toString());
                     echo "<br>";
 
                 }
         }
         ?>
-    </p>
+    </h3>
 </body>
 
 </html>
