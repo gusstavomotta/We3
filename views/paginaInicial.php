@@ -6,10 +6,20 @@
     <title>Pagina Inicial</title>
 </head>
 <body>
-    <h1>
-    </h1>
-    <p>
-        Desenvolvido por Gustavo e Rafael
-    </p>
+    <h1>Login</h1>
+    <form action="/Login" method="post">
+        <label for="email">E-mail</label>
+        <br>
+        <input type="text" name="email" id="email">
+        <br>
+        <br>
+        <label for="cpf">Cpf</label>
+        <br>
+        <input type="text" name="cpf" id="cpf">
+        <br>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    <br>
 </body> 
 </html>
