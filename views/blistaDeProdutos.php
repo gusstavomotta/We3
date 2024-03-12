@@ -14,17 +14,27 @@ require __DIR__ . "/../Controller/produtoController.php";
 <body>
     <h1>Lista dos produtos</h1>
     <form action="carrinhoDeCompras.php" method="post">
+        <table>
+            <tr>
+                <th>Produto</th>
+                <th>Preco</th>
+                <th>Comprar</th>
+            </tr>
         <?php
         $lista = listarProdutos();
         foreach ($lista as $key => $produto) {
         ?>
-            <div class="grid">
-                <div class="item">
-                    <label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"> <?php echo $produto; ?></label><br>
-                    <a class="comprar" href="/">Comprar</a>
-                    
+
+            <tr>
+                <div class="grid">
+                    <div class="item">
+                        <td><?php echo $produto->getDscProduto(); ?></td>
+                        <td><?php echo $produto->getPreco(); ?></td>
+                        <td><label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label></td><br>
+                        <!-- <a class="comprar" href="/">Comprar</a> -->
+                    </div>
                 </div>
-            </div>
+            </tr>
 
         <?php
         }
@@ -34,6 +44,4 @@ require __DIR__ . "/../Controller/produtoController.php";
         <input type="submit" value="Visualizar Carrinho">
     </form>
 </body>
-
-
 </html>
