@@ -13,7 +13,7 @@ class Carrinho
     /**
      * Adiciona um produto no carrinho de compras
      */
-    public function adicionarProdutoAoCarrinho(Produto $produto)
+    public function adicionarProdutoAoCarrinho($produto)
     {
         array_push(self::$carrinho_compras, $produto);
     }

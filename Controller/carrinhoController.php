@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__ . "/../models/Carrinho.php";
 function criarCarrinho($lista_de_produtos)
 {
 
