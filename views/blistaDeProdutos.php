@@ -26,14 +26,14 @@ require __DIR__ . "/../Controller/produtoController.php";
         ?>
 
             <tr>
-                <div class="grid">
-                    <div class="item">
+                <!-- <div class="grid"> -->
+                    <!-- <div class="item"> -->
                         <td><?php echo $produto->getDscProduto(); ?></td>
                         <td><?php echo $produto->getPreco(); ?></td>
                         <td><label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label></td><br>
                         <!-- <a class="comprar" href="/">Comprar</a> -->
-                    </div>
-                </div>
+                    <!-- </div> -->
+                <!-- </div> -->
             </tr>
 
         <?php
@@ -41,6 +41,7 @@ require __DIR__ . "/../Controller/produtoController.php";
         ?>
 
         <!-- <?php var_dump($_SESSION['nome']) ?> -->
+        </table>
         <input type="submit" value="Visualizar Carrinho">
     </form>
 </body>
