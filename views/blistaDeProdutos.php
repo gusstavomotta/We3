@@ -21,7 +21,10 @@ require __DIR__ . "/../Controller/produtoController.php";
         foreach ($lista as $key => $produto) {
         ?>
                 <div class="item">
-                    <label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"> <?php echo $produto; ?></label><br>
+                    <?php echo $produto->getDscProduto() . "<br>"; ?>
+                    <?php echo "<br>"?>
+                    <td><?php echo "Preço: " . $produto->getPreco() . " R$" . "<br>"; ?></td>
+                    <label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br>
                     <!-- <a class="comprar" href="/">Comprar</a> -->                  
                 </div>
         <?php
