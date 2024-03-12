@@ -29,7 +29,10 @@ if (isset($_POST['produto'])) {
                         <?php print($produtos); ?>
                     </div>
                 </div>
-            <?php } ?>
+            <?php } 
+            //tem que ajusar o subtotal
+            // e a quantidade items
+            ?>
             </p>
 
 </body>
