@@ -1,7 +1,7 @@
 
 
 <?php 
-require __DIR__ . "../Controller/carrinhoController.php";
+require __DIR__ . "/../Controller/carrinhoController.php";
 session_start();
 
 if (isset($_POST['produto'])) {
@@ -22,7 +22,10 @@ if (isset($_POST['produto'])) {
 <body>
     <h1>
     
-        <?php criarCarrinho($produtosSelecionados)?>
+        <?php foreach($produtosSelecionados as $produto){
+             print_r($produto);            
+        }
+        ?>
     </h1>
 
     <p>

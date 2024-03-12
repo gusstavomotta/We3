@@ -26,14 +26,9 @@ require __DIR__ . "/../Controller/produtoController.php";
         ?>
 
             <tr>
-                <!-- <div class="grid"> -->
-                    <!-- <div class="item"> -->
-                        <td><?php echo $produto->getDscProduto(); ?></td>
-                        <td><?php echo $produto->getPreco(); ?></td>
-                        <td><label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label></td><br>
-                        <!-- <a class="comprar" href="/">Comprar</a> -->
-                    <!-- </div> -->
-                <!-- </div> -->
+                <td><?php echo $produto->getDscProduto(); ?></td>
+                <td><?php echo $produto->getPreco(); ?></td>
+                <td><label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label></td>
             </tr>
 
         <?php
