@@ -59,7 +59,8 @@ class Usuario
         return (string) $ret;
     }
     public static function verificaRetornaUsuario($pessoa)
-    {
+    {   
+        
         if ($pessoa && isset($pessoa['result']['results'][0])) {
             $dados = $pessoa['result']['results'][0];
 

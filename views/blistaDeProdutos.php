@@ -15,7 +15,7 @@ require __DIR__ . "/../Controller/produtoController.php";
     <h1>Lista dos produtos</h1>
     <form action="" method="post">
         <?php
-        $lista = listar_produtos();
+        $lista = listarProdutos();
         foreach ($lista as $key => $produto) {
         ?>
             <label><input type="radio" name="produto" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"> <?php echo $produto; ?></label><br>

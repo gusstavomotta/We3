@@ -1,6 +1,6 @@
 <?php
 
-function criar_carrinho($lista_de_produtos)
+function criarCarrinho($lista_de_produtos)
 {
 
      $carro = new Carrinho();
