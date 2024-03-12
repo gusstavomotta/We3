@@ -7,7 +7,7 @@ function listarProdutos()
 {
     $produtos = Requisicao::requisicaoProdutos();
     $lista_de_produtos = Produto::verificaRetornaArrayProdutos($produtos);
-
+    
     return $lista_de_produtos;
 }
 

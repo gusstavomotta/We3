@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php session_start();
+
+if (isset($_POST['produto'])) {
+    $produtosSelecionados = $_POST['produto'];
+    // Agora $produtosSelecionados é um array contendo os produtos selecionados
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +17,16 @@
 
 <body>
     <h1>
+    
+        <?php foreach($produtosSelecionados as $produtos){
+            echo "<br>";
+            print_r($produtos);   
+            echo "<br>";
+            
+        }
+            ?>
+               </div>
+            </div>
 
     </h1>
 

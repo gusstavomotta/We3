@@ -13,15 +13,15 @@ require __DIR__ . "/../Controller/produtoController.php";
 
 <body>
     <h1>Lista dos produtos</h1>
-    <form action="" method="post">
+    <form action="carrinhoDeCompras.php" method="post">
         <?php
         $lista = listarProdutos();
         foreach ($lista as $key => $produto) {
         ?>
             <div class="grid">
                 <div class="item">
-                    <label><input type="radio" name="produto" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"> <?php echo $produto; ?></label><br>
-                    <a class="comprar" href="/">Comprar</a>
+                    <label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"> <?php echo $produto; ?></label><br>
+                    <!-- <a class="comprar" href="/">Comprar</a> -->
                 </div>
             </div>
 
@@ -30,8 +30,9 @@ require __DIR__ . "/../Controller/produtoController.php";
         ?>
 
         <!-- <?php var_dump($_SESSION['nome']) ?> -->
-        <input type="submit" value="Comprar">
+        <input type="submit" value="Visualizar Carrinho">
     </form>
 </body>
+
 
 </html>
