@@ -31,13 +31,13 @@ input[type="submit"] {
     width: 100%; 
     padding: 10px; 
     border: none; 
-    background-color: #178b00; 
+    background-color: #c30000; 
     color: #fff; 
     cursor: pointer; 
 }
 
 a {
-    color: #14ac00; 
+    color: #c30000; 
     text-decoration: none; 
     display: block; 
     margin-bottom: 10px;
@@ -45,6 +45,7 @@ a {
 
 body {
     font-family: Arial;
+    background-image: url('cdf7175d038ff9397b7666349e552924.jpg');
   }
   
   h1 {
@@ -56,7 +57,7 @@ body {
   }
   
   .comprar {
-    background: #178b00;
+    background: #c30000;
     color: rgb(255, 255, 255);
     padding: 10px 20px;
     text-decoration: none;
