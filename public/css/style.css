@@ -1,6 +1,5 @@
 .body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     text-align: left; 
 }
 
@@ -71,10 +70,11 @@ h1 {
   
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas com o mesmo tamanho */
-    gap: 20px; /* Espaço entre as divs */
-    /*display: flex;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
     justify-content: center;  
+    padding: 50px;
+    /*display: flex;
     align-items: center; */
   } 
   

@@ -13,7 +13,8 @@
 <body>
     <h1>Login</h1>
     <form action="../Controller/loginController.php" method="post">
-        
+    <div class="body">
+        <div class="form">
         <br>
         <label for="cpf">Cpf</label>
         <br>
@@ -25,6 +26,8 @@
         <br>
         <br>
         <input type="submit" value="Login">
+    </div>
+       </div>
     </form>
     <br>
 </body>
