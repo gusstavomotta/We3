@@ -18,5 +18,7 @@ if ($usuario != false) {
 
     header("location: ../views/blistaDeProdutos.php");
 } else {
-    echo "Cpf ou email inválidos, tente novamente!";
+    
+    header("location: ../views/apaginaInicial.php");
+
 }

@@ -7,8 +7,17 @@ function listarProdutos()
 {
     $produtos = Requisicao::requisicaoProdutos();
     $lista_de_produtos = Produto::verificaRetornaArrayProdutos($produtos);
-    
-    return $lista_de_produtos;
+    $lista_filtrada = [];
+
+    foreach ($lista_de_produtos as $produtos){
+        if($produtos->getPreco() == 20 
+        || $produtos->getPreco() == 50 
+        || $produtos->getPreco() == 100){
+            
+            array_push($lista_filtrada, $produtos);
+        }
+    }
+    return $lista_filtrada;
 }
 
 function retornaProdutoPorId(array $lista_produtos, string $id){
