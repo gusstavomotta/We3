@@ -23,10 +23,12 @@ require __DIR__ . "/../Controller/produtoController.php";
         }
         //quando o usuario clicar em um produto, o programa deve pegar o ID desse produto, percorre as lista de produtos e retornar esse produto
         // apos retornar o produto o mesmo deve ser adicionado ao carrinho
+    
         ?>
 
         <!-- <?php var_dump($_SESSION['nome']) ?> -->
         <input type="submit" value="Comprar">
+        //esse botao manda pro model do carrinho
     </form>
 </body>
 

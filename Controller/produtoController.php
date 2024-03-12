@@ -16,7 +16,7 @@ function retornaProdutoPorId(array $lista_produtos, string $id){
     foreach ($lista_produtos as $produto){
         if($produto->getIdProduto() == $id){
             return $produto;
-        }
+        }   
     }
     return false;
 }
