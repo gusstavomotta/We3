@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <img src="/home/imply/Documentos/GitHub/We3/views/123468810-padrão-sem-emenda-do-desenho-da-mão-do-tema-da-produção-do-cinema-apropriado-para-o-fundo.jpg" alt="">
     <h1>Login</h1>
     <form action="../Controller/loginController.php" method="post">
         

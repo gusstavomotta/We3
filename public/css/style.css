@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    text-align: center; 
+    text-align: left; 
 }
 
 h1, h2, h3 {
@@ -45,8 +45,8 @@ a {
 
 body {
     font-family: Arial;
-    background-image: url('cdf7175d038ff9397b7666349e552924.jpg');
-  }
+    /* background-image: url('cdf7175d038ff9397b7666349e552924.jpg'); */
+  } 
   
   h1 {
     text-align: center;

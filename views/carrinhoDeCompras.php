@@ -1,12 +1,9 @@
-
-
-<?php 
+<?php
 require __DIR__ . "/../Controller/carrinhoController.php";
 session_start();
 
 if (isset($_POST['produto'])) {
     $produtosSelecionados = $_POST['produto'];
-    // Agora $produtosSelecionados é um array contendo os produtos selecionados
 }
 ?>
 <!DOCTYPE html>
@@ -20,16 +17,20 @@ if (isset($_POST['produto'])) {
 </head>
 
 <body>
-    <h1>
-        <?php foreach ($produtosSelecionados as $produtos){
-            print_r($produtos);   
-        }?>
-    </h1>
-
+    <h1> Carrinho </h1>
     <p>
-        Desenvolvido por Gustavo e Rafael
-    </p>
+
+    <div class="grid">
+        <div class="item">
+            <?php foreach ($produtosSelecionados as $produtos) {
+            ?>
+                <div class="grid">
+                    <div class="item">
+                        <?php print($produtos); ?>
+                    </div>
+                </div>
+            <?php } ?>
+            </p>
 
 </body>
-
 </html>
