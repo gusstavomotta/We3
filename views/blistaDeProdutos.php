@@ -25,7 +25,8 @@ require __DIR__ . "/../Controller/produtoController.php";
                     <?php echo "<br>"?>
                     <td><?php echo "Preço: " . $produto->getPreco() . " R$" . "<br>"; ?></td>
                     <label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br>
-                    <!-- <a class="comprar" href="/">Comprar</a> -->                  
+                    <!-- <input type="submit" name="comprar" value="Comprar">
+                    <label><input type="hidden" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br> -->
                 </div>
         <?php
         }
