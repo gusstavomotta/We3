@@ -32,6 +32,7 @@ if (isset($_POST['produto'])) {
             <?php } 
             //tem que ajusar o subtotal
             // e a quantidade items
+            // Pegar o id como string e consultar ele na lista de produtos
             ?>
             </p>
 
