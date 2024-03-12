@@ -18,22 +18,19 @@ require __DIR__ . "/../Controller/produtoController.php";
         $lista = listarProdutos();
         foreach ($lista as $key => $produto) {
         ?>
-        <div class="grid">
-            <div class="item">
-            <label><input type="radio" name="produto" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"> <?php echo $produto; ?></label><br>
+            <div class="grid">
+                <div class="item">
+                    <label><input type="radio" name="produto" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"> <?php echo $produto; ?></label><br>
+                    <a class="comprar" href="/">Comprar</a>
+                </div>
             </div>
-        </div>
-            
+
         <?php
         }
-        //quando o usuario clicar em um produto, o programa deve pegar o ID desse produto, percorre as lista de produtos e retornar esse produto
-        // apos retornar o produto o mesmo deve ser adicionado ao carrinho
-    
         ?>
 
         <!-- <?php var_dump($_SESSION['nome']) ?> -->
         <input type="submit" value="Comprar">
-        //esse botao manda pro model do carrinho
     </form>
 </body>
 

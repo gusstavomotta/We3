@@ -56,8 +56,8 @@ body {
   }
   
   .comprar {
-    background: #a8f;
-    color: #103;
+    background: #178b00;
+    color: rgb(255, 255, 255);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 4px;
