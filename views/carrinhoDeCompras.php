@@ -1,4 +1,8 @@
-<?php session_start();
+
+
+<?php 
+require __DIR__ . "../Controller/carrinhoController.php";
+session_start();
 
 if (isset($_POST['produto'])) {
     $produtosSelecionados = $_POST['produto'];
@@ -18,16 +22,7 @@ if (isset($_POST['produto'])) {
 <body>
     <h1>
     
-        <?php foreach($produtosSelecionados as $produtos){
-            echo "<br>";
-            print_r($produtos);   
-            echo "<br>";
-            
-        }
-            ?>
-               </div>
-            </div>
-
+        <?php criarCarrinho($produtosSelecionados)?>
     </h1>
 
     <p>

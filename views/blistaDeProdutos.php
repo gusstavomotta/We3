@@ -21,7 +21,8 @@ require __DIR__ . "/../Controller/produtoController.php";
             <div class="grid">
                 <div class="item">
                     <label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"> <?php echo $produto; ?></label><br>
-                    <!-- <a class="comprar" href="/">Comprar</a> -->
+                    <a class="comprar" href="/">Comprar</a>
+                    
                 </div>
             </div>
 
