@@ -18,7 +18,12 @@ require __DIR__ . "/../Controller/produtoController.php";
         $lista = listarProdutos();
         foreach ($lista as $key => $produto) {
         ?>
+        <div class="grid">
+            <div class="item">
             <label><input type="radio" name="produto" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"> <?php echo $produto; ?></label><br>
+            </div>
+        </div>
+            
         <?php
         }
         //quando o usuario clicar em um produto, o programa deve pegar o ID desse produto, percorre as lista de produtos e retornar esse produto
