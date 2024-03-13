@@ -33,7 +33,6 @@ require __DIR__ . "/../Controller/produtoController.php";
             ?>
         </div>
 
-
         <!-- <?php var_dump($_SESSION['nome']) ?> -->
         <input type="submit" value="Visualizar Carrinho">
     </form>

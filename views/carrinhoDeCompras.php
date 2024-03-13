@@ -22,37 +22,28 @@ if (isset($_POST['produto'])) {
 <body>
     <h1> Carrinho </h1>
     <p>
-        <?php foreach ($produtosSelecionados as $produtos) {
+        <?php
+        $carrinho = array();
+        foreach ($produtosSelecionados as $produtos) {
+
+            $id = pegaIdString($produtos);
+            $listaProdutos = listarProdutos();
+            $produto = (retornaProdutoPorId($listaProdutos, $id));
+
+            array_push($carrinho, $produto);
+        }
         ?>
     <div class="grid">
         <div class="item">
-            <?php 
-            
-            $id = pegaIdString($produtos);
-            $listaProdutos = listarProdutos();
-
-            $produto = (retornaProdutoPorId($listaProdutos, $id));
-
-            $carrinho = [$produto]; 
-
-            print($produto->contarQtdProdutos($carrinho));
-            echo "<br>";
-            print($produto->somarSubtotal($carrinho));
-            echo "<br>";
-            //print($produto->contarQtdProdutos());
-
-            //var_dump($produtos)
+            <?php
+            print_r($carrinho);
+            $carrinho_compras = criarCarrinho($carrinho);
             ?>
         </div>
     </div>
-<?php }
-        //tem que ajusar o subtotal
-        // e a quantidade items
-        // Pegar o id como string e consultar ele na lista de produtos
-?>
-</p>
-<a href="/views/blistaDeProdutos.php">Voltar à lista de produtos</a>
-<!-- <a href="/views/apaginaInicial.php">Voltar à pagina inicial</a> -->
+
+    </p>
+    <a href="/views/blistaDeProdutos.php">Voltar à lista de produtos</a>
 </body>
 
 </html>
