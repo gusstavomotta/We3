@@ -35,7 +35,8 @@ session_start();
                     <!-- O BOTAO COMO DO TIPO SUBMIT ESTA ENVIANDO TODOS OS IDS PARA O BACKEND -->
                     <!-- O PROGRAMA ESTA RECEBENDO APENAS 1 PRODUTO DE CADA VEZ -->
 
-                    <label><input type="checkbox" name="produto" id="<?php echo $key; ?>" value="<?php echo $produto->get_id_produto(); ?>"></label><br>
+                    <!-- BOTÃO FUNCIONANDO -->
+                    <button type="submit" name="produto" value="<?php echo $produto->get_id_produto(); ?>">Comprar</button>
                     <!-- <input type="submit" name="comprar" value="Comprar">
                     <label><input type="hidden" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br> -->
 

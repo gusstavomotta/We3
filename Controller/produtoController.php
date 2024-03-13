@@ -48,7 +48,7 @@ function retorna_carrinho_de_compras_sessao()
     $produto = (retorna_produto_por_id($listaProdutos, $produtosSelecionados));
 
     $_SESSION['produtos'][] = $produto;
-    var_dump($_SESSION['produtos']);
+    //var_dump($_SESSION['produtos']);
 
     return $_SESSION['produtos'];
 }
