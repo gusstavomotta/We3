@@ -10,6 +10,23 @@ if (isset($_POST['produto'])) {
     $produtosSelecionados = $_POST['produto'];
 }
 
+if (!isset($_SESSION['produtos'])) {
+    $_SESSION['produtos'] = "IF";
+} else {
+    $_SESSION['produtos'] = "else";
+}
+
+var_dump($_SESSION['produtos']);
+
+// $carrinho_sessao = array()
+// foreach ($produtosSelecionados as $produtos) {
+
+//     $id = pegaIdString($produtos);
+//     $listaProdutos = listarProdutos();
+//     $produto = (retornaProdutoPorId($listaProdutos, $id));
+
+//     array_push($carrinho, $produto);
+// }
 // if (!isset($_SESSION['produtos'])) {
 //     $_SESSION['produtos'] = $produtosSelecionados;
 // } else {
