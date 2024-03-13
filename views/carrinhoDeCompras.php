@@ -36,8 +36,21 @@ if (isset($_POST['produto'])) {
     <div class="grid">
         <div class="item">
             <?php
+                $carro = criarCarrinho($carrinho);
 
-            criarCarrinho($carrinho);
+                 print("Quantidade de produtos: " . $carro->contarQtdProdutos());
+                 print("<br>");
+                 print("Subtotal: " . $carro->somarSubtotal());
+                 print("<br>");
+
+                $lista = $carro->getCarrinho();
+
+                foreach($lista as $produto){
+                    print("Descrição do produto: " . $produto->getDscProduto());
+                    print("<br>");
+                    print("Preço do produto: " . $produto->getPreco());
+                    print("<br>");
+                }
             ?>
         </div>
     </div>
