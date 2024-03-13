@@ -5,9 +5,9 @@ session_start();
 require __DIR__ . "/../models/Requisicao.php";
 require __DIR__ . "/../models/Usuario.php";
 
-$cpf = $_POST["cpf"];
-$email = $_POST["email"];
-verifica_e_redireciona_usuario($cpf, $email);
+if (isset($_POST["cpf"]) || isset($_POST["email"])) {
+    verifica_e_redireciona_usuario($_POST["cpf"], $_POST["email"]);
+}
 
 function verifica_e_redireciona_usuario($cpf, $email)
 {

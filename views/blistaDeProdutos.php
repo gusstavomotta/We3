@@ -1,5 +1,4 @@
 <?php
-
 require __DIR__ . "/../Controller/produtoController.php";
 session_start();
 
@@ -21,7 +20,6 @@ session_start();
         <div class="grid-container">
 
             <?php
-
             $lista_de_produtos = filtrar_produtos();
             foreach ($lista_de_produtos as $key => $produto) {
 
@@ -29,18 +27,9 @@ session_start();
                 <div class="item">
                     <?php echo $produto->get_dsc_produto() . "<br>"; ?>
                     <?php echo "<br>" ?>
-                    <td><?php echo "Preço: " .  " R$ " .  $produto->get_preco()  . "<br>"; ?></td>
+                    <?php echo "Preço: R$ " .  $produto->get_preco()  . "<br>"; ?>
 
-                    <!-- DEFINITIVAMENTE O PROBLEMA É NO BOTAO -->
-                    <!-- O BOTAO COMO DO TIPO SUBMIT ESTA ENVIANDO TODOS OS IDS PARA O BACKEND -->
-                    <!-- O PROGRAMA ESTA RECEBENDO APENAS 1 PRODUTO DE CADA VEZ -->
-
-                    <!-- BOTÃO FUNCIONANDO -->
                     <button type="submit" name="produto" value="<?php echo $produto->get_id_produto(); ?>">Comprar</button>
-                    <!-- <input type="submit" name="comprar" value="Comprar">
-                    <label><input type="hidden" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br> -->
-
-
 
                 </div>
             <?php
@@ -50,11 +39,9 @@ session_start();
 
         <input type="submit" value="Visualizar Carrinho">
     </form>
-    <!-- <a href="/views/apaginaInicial.php">Voltar à pagina inicial</a> -->
-    <a href="/views/carrinhoDeCompras.php">Voltar ao carrinho</a>
 
+    <a href="/views/carrinhoDeCompras.php">Ir ao carrinho</a>
 
 </body>
-
 
 </html>

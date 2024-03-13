@@ -64,9 +64,8 @@ class Produto
 
                 array_push($lista_de_produtos, $produto);
             }
-        } else {
-            echo "Não foi possível retornar os produtos!";
+            return $lista_de_produtos;
         }
-        return $lista_de_produtos;
+        return false;
     }
 }

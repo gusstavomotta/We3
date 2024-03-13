@@ -28,6 +28,12 @@ $produtos_carrinho = retorna_carrinho_de_compras_sessao();
                 $carrinho = cria_e_adiciona_produto_ao_carrinho($produto);
             }
 
+            if (empty($carrinho)) {
+                echo "Carrinho vazio. ";
+                echo '<a href="/views/blistaDeProdutos.php">Voltar à pagina de produtos</a>';
+                exit;
+            }
+
             print("Quantidade de produtos: " . $carrinho->contar_qtd_produtos());
             print("<br>");
             print("Subtotal: " . $carrinho->somar_subtotal());
@@ -52,7 +58,7 @@ $produtos_carrinho = retorna_carrinho_de_compras_sessao();
     </div>
 
     </p>
-    <a href="/views/blistaDeProdutos.php">Continuar Comprando</a>
+    <a href="/views/blistaDeProdutos.php">Adicionar mais produtos ao carrinho</a>
     <a href="/views/finalizaSessao.php">Finalizar Compra</a>
 </body>
 

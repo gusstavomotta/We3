@@ -55,9 +55,9 @@ class Usuario
                 $dados['cpf'],
                 $dados['idpessoa']
             );
-        } else {
-            return false;
+
+            return $usuario;
         }
-        return $usuario;
+        return false;
     }
 }
