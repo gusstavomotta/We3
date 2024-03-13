@@ -46,10 +46,18 @@ if (isset($_POST['produto'])) {
                 $lista = $carro->getCarrinho();
 
                 foreach($lista as $produto){
+                ?>
+            <div class="grid">
+                <div class="item">
+                    <?php
                     print("Descrição do produto: " . $produto->getDscProduto());
                     print("<br>");
                     print("Preço do produto: " . $produto->getPreco());
                     print("<br>");
+                    ?>
+                </div>
+            </div>
+                    <?php
                 }
             ?>
         </div>
