@@ -34,15 +34,6 @@ class Usuario
         return $this->idpessoa;
     }
 
-    public function __toString()
-    {
-        $ret = "\nId do usuário: " . $this->get_id_pessoa() . "\n";
-        $ret .= "Nome do usuário: " . $this->get_nome() . "\n";
-        $ret .= "Cpf do usuário: " . $this->get_cpf() . "\n";
-        $ret .= "Email do usuário: " . $this->get_email() . "\n";
-
-        return (string) $ret;
-    }
     public static function verifica_retorna_usuario(array $pessoa)
     {
 

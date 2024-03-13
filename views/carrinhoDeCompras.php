@@ -18,7 +18,7 @@ $produtos_carrinho = retorna_carrinho_de_compras_sessao();
 </head>
 
 <body>
-    <h1> Carrinho </h1>
+    <h1> Carrinho de Compras </h1>
     <p>
     <div class="grid">
         <div class="item">

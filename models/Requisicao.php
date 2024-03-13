@@ -22,7 +22,6 @@ class Requisicao
 
         $decodificado = json_decode($response, true);
 
-
         if (!$decodificado) {
             http_response_code(404);
             echo json_encode(['message' => 'Data not found']);

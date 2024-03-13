@@ -40,15 +40,15 @@ function retorna_produto_por_id(array $lista_produtos, string $id)
 function retorna_carrinho_de_compras_sessao()
 {
 
+    if (!isset($_SESSION['produtos'])) {
+        $_SESSION['produtos'] = array();
+    }
+
     if (isset($_POST['produto'])) {
         $produtosSelecionados = $_POST['produto'];
         $listaProdutos = filtrar_produtos();
         $produto = (retorna_produto_por_id($listaProdutos, $produtosSelecionados));
         $_SESSION['produtos'][] = $produto;
-    }
-
-    if (!isset($_SESSION['produtos'])) {
-        $_SESSION['produtos'] = array();
     }
 
     return $_SESSION['produtos'];

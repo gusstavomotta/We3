@@ -40,13 +40,6 @@ class Produto
     //     $this->preco = $preco;
     // }
 
-    public function __toString()
-    {
-        $ret = "\nId do produto: " . $this->get_id_produto() . "\n";
-        $ret .= "Descrição do produto: " . $this->get_dsc_produto() . "\n";
-        $ret .= "Preço do produto: " . $this->get_preco() . "\n";
-        return (string) $ret;
-    }
 
     public static function verifica_retorna_array_produtos(array $produtos)
     {
