@@ -30,9 +30,15 @@ session_start();
                     <?php echo $produto->get_dsc_produto() . "<br>"; ?>
                     <?php echo "<br>" ?>
                     <td><?php echo "Preço: " .  " R$ " .  $produto->get_preco()  . "<br>"; ?></td>
+
+
+                    <!-- A CHARADA ESTÁ POR AQUI, TIRANDO OS COLCHETES DO NAME=PRODUTO[] O PROGRAMA RETORNA SO 1 PRODUTO POREM NAO ADD NA LISTA -->
                     <label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br>
                     <!-- <input type="submit" name="comprar" value="Comprar">
                     <label><input type="hidden" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br> -->
+
+
+
                 </div>
             <?php
             }
