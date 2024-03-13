@@ -1,10 +1,10 @@
 <?php
 require __DIR__ . "/../models/Carrinho.php";
-function criarCarrinho($lista_de_produtos)
+function criarCarrinho($produto)
 {
 
      $carro = new Carrinho();
-     $carro->adicionarProdutoAoCarrinho($lista_de_produtos);
+     $carro->adicionarProdutoAoCarrinho($produto);
 
      return $carro;
 }

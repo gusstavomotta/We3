@@ -21,8 +21,11 @@ foreach ($produtosSelecionados as $produtos) {
 
     $_SESSION['produtos'][] = $produto;
 }
+// foreach ($_SESSION['produtos'] as $produto) {
+//     print_r($produto);
+// }
 
-
+$produtos_carrinho = $_SESSION['produtos'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +54,9 @@ foreach ($produtosSelecionados as $produtos) {
     <div class="grid">
         <div class="item">
             <?php
-            $carro = criarCarrinho($carrinho);
+            foreach ($produtos_carrinho as $produto) {
+                $carro = criarCarrinho($produto);
+            }
 
             print("Quantidade de produtos: " . $carro->contarQtdProdutos());
             print("<br>");
@@ -60,7 +65,7 @@ foreach ($produtosSelecionados as $produtos) {
 
             $lista = $carro->getCarrinho();
 
-            foreach ($lista as $produto) {
+            foreach ($produtos_carrinho as $produto) {
             ?>
                 <div class="grid">
                     <div class="item">
