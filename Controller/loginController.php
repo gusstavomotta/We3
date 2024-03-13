@@ -18,7 +18,6 @@ if ($usuario != false) {
 
     header("location: ../views/blistaDeProdutos.php");
 } else {
-    
-    header("location: ../views/apaginaInicial.php");
 
+    header("location: ../views/apaginaInicial.php");
 }

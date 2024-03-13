@@ -19,22 +19,21 @@ if (isset($_POST['produto'])) {
 <body>
     <h1> Carrinho </h1>
     <p>
-
+        <?php foreach ($produtosSelecionados as $produtos) {
+        ?>
     <div class="grid">
         <div class="item">
-            <?php foreach ($produtosSelecionados as $produtos) {
-            ?>
-                <div class="grid">
-                    <div class="item">
-                        <?php print($produtos); ?>
-                    </div>
-                </div>
-            <?php } 
-            //tem que ajusar o subtotal
-            // e a quantidade items
-            // Pegar o id como string e consultar ele na lista de produtos
-            ?>
-            </p>
-
+            <?php print($produtos); ?>
+        </div>
+    </div>
+<?php }
+        //tem que ajusar o subtotal
+        // e a quantidade items
+        // Pegar o id como string e consultar ele na lista de produtos
+?>
+</p>
+<a href="/views/blistaDeProdutos.php">Voltar à lista de produtos</a>
+<!-- <a href="/views/apaginaInicial.php">Voltar à pagina inicial</a> -->
 </body>
+
 </html>
