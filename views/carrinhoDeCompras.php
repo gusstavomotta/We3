@@ -5,35 +5,22 @@ require_once __DIR__ . "/../models/Carrinho.php";
 
 session_start();
 
-
 if (isset($_POST['produto'])) {
     $produtosSelecionados = $_POST['produto'];
 }
 
 if (!isset($_SESSION['produtos'])) {
-    $_SESSION['produtos'] = "IF";
-} else {
-    $_SESSION['produtos'] = "else";
+
+    foreach ($produtosSelecionados as $produtos) {
+
+        $id = pegaIdString($produtos);
+        $listaProdutos = listarProdutos();
+        $produto = (retornaProdutoPorId($listaProdutos, $id));
+
+        array_push($_SESSION['produtos'], $produto);
+    }
 }
-
 var_dump($_SESSION['produtos']);
-
-// $carrinho_sessao = array()
-// foreach ($produtosSelecionados as $produtos) {
-
-//     $id = pegaIdString($produtos);
-//     $listaProdutos = listarProdutos();
-//     $produto = (retornaProdutoPorId($listaProdutos, $id));
-
-//     array_push($carrinho, $produto);
-// }
-// if (!isset($_SESSION['produtos'])) {
-//     $_SESSION['produtos'] = $produtosSelecionados;
-// } else {
-//     $_SESSION['produtos'] .= $produtosSelecionados;
-//     var_dump($_SESSION['produtos']);
-// }
-
 
 ?>
 <!DOCTYPE html>
