@@ -5,9 +5,19 @@ require_once __DIR__ . "/../models/Carrinho.php";
 
 session_start();
 
+
 if (isset($_POST['produto'])) {
     $produtosSelecionados = $_POST['produto'];
 }
+
+// if (!isset($_SESSION['produtos'])) {
+//     $_SESSION['produtos'] = $produtosSelecionados;
+// } else {
+//     $_SESSION['produtos'] .= $produtosSelecionados;
+//     var_dump($_SESSION['produtos']);
+// }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,29 +46,29 @@ if (isset($_POST['produto'])) {
     <div class="grid">
         <div class="item">
             <?php
-                $carro = criarCarrinho($carrinho);
+            $carro = criarCarrinho($carrinho);
 
-                 print("Quantidade de produtos: " . $carro->contarQtdProdutos());
-                 print("<br>");
-                 print("Subtotal: " . $carro->somarSubtotal());
-                 print("<br>");
+            print("Quantidade de produtos: " . $carro->contarQtdProdutos());
+            print("<br>");
+            print("Subtotal: " . $carro->somarSubtotal());
+            print("<br>");
 
-                $lista = $carro->getCarrinho();
+            $lista = $carro->getCarrinho();
 
-                foreach($lista as $produto){
-                ?>
-            <div class="grid">
-                <div class="item">
-                    <?php
-                    print("Descrição do produto: " . $produto->getDscProduto());
-                    print("<br>");
-                    print("Preço do produto: " . $produto->getPreco());
-                    print("<br>");
-                    ?>
+            foreach ($lista as $produto) {
+            ?>
+                <div class="grid">
+                    <div class="item">
+                        <?php
+                        print("Descrição do produto: " . $produto->getDscProduto());
+                        print("<br>");
+                        print("Preço do produto: " . $produto->getPreco());
+                        print("<br>");
+                        ?>
+                    </div>
                 </div>
-            </div>
-                    <?php
-                }
+            <?php
+            }
             ?>
         </div>
     </div>
