@@ -9,7 +9,7 @@ if (isset($_POST["cpf"]) || isset($_POST["email"])) {
     verifica_e_redireciona_usuario($_POST["cpf"], $_POST["email"]);
 }
 
-function verifica_e_redireciona_usuario($cpf, $email)
+function verifica_e_redireciona_usuario(String $cpf, String $email)
 {
 
     $pessoa_api = Requisicao::requisicao_login($cpf, $email);

@@ -48,7 +48,7 @@ class Produto
         return (string) $ret;
     }
 
-    public static function verifica_retorna_array_produtos($produtos)
+    public static function verifica_retorna_array_produtos(array $produtos)
     {
         if ($produtos && isset($produtos['result'])) {
 

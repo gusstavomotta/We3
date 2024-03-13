@@ -9,7 +9,7 @@ class Carrinho
         return self::$carrinho_compras;
     }
 
-    public function adicionar_produto_ao_carrinho($produto)
+    public function adicionar_produto_ao_carrinho(Produto $produto)
     {
 
         array_push(self::$carrinho_compras, $produto);

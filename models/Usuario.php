@@ -43,7 +43,7 @@ class Usuario
 
         return (string) $ret;
     }
-    public static function verifica_retorna_usuario($pessoa)
+    public static function verifica_retorna_usuario(array $pessoa)
     {
 
         if ($pessoa && isset($pessoa['result']['results'][0])) {
