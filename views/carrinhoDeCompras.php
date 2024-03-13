@@ -4,28 +4,8 @@ require __DIR__ . "/../Controller/produtoController.php";
 require_once __DIR__ . "/../models/Carrinho.php";
 
 session_start();
+$produtos_carrinho = retorna_carrinho_de_compras_sessao();
 
-if (isset($_POST['produto'])) {
-    $produtosSelecionados = $_POST['produto'];
-}
-
-if (!isset($_SESSION['produtos'])) {
-    $_SESSION['produtos'] = array();
-}
-
-foreach ($produtosSelecionados as $produtos) {
-
-    $id = pegaIdString($produtos);
-    $listaProdutos = listarProdutos();
-    $produto = (retornaProdutoPorId($listaProdutos, $id));
-
-    $_SESSION['produtos'][] = $produto;
-}
-// foreach ($_SESSION['produtos'] as $produto) {
-//     print_r($produto);
-// }
-
-$produtos_carrinho = $_SESSION['produtos'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,39 +20,27 @@ $produtos_carrinho = $_SESSION['produtos'];
 <body>
     <h1> Carrinho </h1>
     <p>
-        <?php
-        $carrinho = array();
-        foreach ($produtosSelecionados as $produtos) {
-
-            $id = pegaIdString($produtos);
-            $listaProdutos = listarProdutos();
-            $produto = (retornaProdutoPorId($listaProdutos, $id));
-
-            array_push($carrinho, $produto);
-        }
-        ?>
     <div class="grid">
         <div class="item">
             <?php
+
             foreach ($produtos_carrinho as $produto) {
-                $carro = criarCarrinho($produto);
+                $carrinho = cria_e_adiciona_produto_ao_carrinho($produto);
             }
 
-            print("Quantidade de produtos: " . $carro->contarQtdProdutos());
+            print("Quantidade de produtos: " . $carrinho->contar_qtd_produtos());
             print("<br>");
-            print("Subtotal: " . $carro->somarSubtotal());
+            print("Subtotal: " . $carrinho->somar_subtotal());
             print("<br>");
-
-            $lista = $carro->getCarrinho();
 
             foreach ($produtos_carrinho as $produto) {
             ?>
                 <div class="grid">
                     <div class="item">
                         <?php
-                        print("Descrição do produto: " . $produto->getDscProduto());
+                        print("Descrição do produto: " . $produto->get_dsc_produto());
                         print("<br>");
-                        print("Preço do produto: " . $produto->getPreco());
+                        print("Preço do produto: " . $produto->get_preco());
                         print("<br>");
                         ?>
                     </div>
@@ -85,6 +53,7 @@ $produtos_carrinho = $_SESSION['produtos'];
 
     </p>
     <a href="/views/blistaDeProdutos.php">Continuar Comprando</a>
+    <a href="/views/finalizaSessao.php">Finalizar Compra</a>
 </body>
 
 </html>

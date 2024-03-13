@@ -4,50 +4,37 @@ class Carrinho
 {
 
     private static array $carrinho_compras = [];
-
-    public function getCarrinho()
+    public function get_carrinho()
     {
         return self::$carrinho_compras;
     }
 
-    /**
-     * Adiciona um produto no carrinho de compras
-     */
-
-    public function adicionarProdutoAoCarrinho($produto)
+    public function adicionar_produto_ao_carrinho($produto)
     {
 
         array_push(self::$carrinho_compras, $produto);
     }
 
-    /**
-     * 
-     * Percorre a lista de compras, procura o ID passado e remove da lista o produto
-     */
-    public function removerProdutoDoCarrinho(String $id)
+    public function remover_produto_do_carrinho(String $id)
     {
 
         foreach (self::$carrinho_compras as $chave => $produto) {
-            if ($produto->getIdProduto() == $id) {
+            if ($produto->get_id_produto() == $id) {
                 unset(self::$carrinho_compras[$chave]);
             }
         }
     }
-    /**
-     * Conta o número de produtos dentro do carrinho de compras
-     */
-    public function contarQtdProdutos()
+
+    public function contar_qtd_produtos()
     {
         return count(self::$carrinho_compras);
     }
-    /**
-     * Realiza a soma do subtotal do carrinho
-     */
-    public function somarSubtotal()
+
+    public function somar_subtotal()
     {
         $subtotal = 0;
         foreach (self::$carrinho_compras as $produto) {
-            $subtotal += $produto->getPreco();
+            $subtotal += $produto->get_preco();
         }
         return $subtotal;
     }

@@ -1,15 +1,15 @@
 <?php
 require __DIR__ . "/../models/Carrinho.php";
-function criarCarrinho($produto)
+function cria_e_adiciona_produto_ao_carrinho($produto)
 {
 
      $carro = new Carrinho();
-     $carro->adicionarProdutoAoCarrinho($produto);
+     $carro->adicionar_produto_ao_carrinho($produto);
 
      return $carro;
 }
 
-function pegaIdString($string)
+function retorna_id_do_produto($string)
 {
 
      $offset = strpos($string, "Id do produto: ");

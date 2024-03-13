@@ -1,6 +1,10 @@
-<?php session_start();
+<?php
+
 require __DIR__ . "/../Controller/produtoController.php";
+session_start();
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +21,15 @@ require __DIR__ . "/../Controller/produtoController.php";
         <div class="grid-container">
 
             <?php
-            $lista = listarProdutos();
-            foreach ($lista as $key => $produto) {
+
+            $lista_de_produtos = filtrar_produtos();
+            foreach ($lista_de_produtos as $key => $produto) {
+
             ?>
                 <div class="item">
-                    <?php echo $produto->getDscProduto() . "<br>"; ?>
+                    <?php echo $produto->get_dsc_produto() . "<br>"; ?>
                     <?php echo "<br>" ?>
-                    <td><?php echo "Preço: " .  " R$ " .  $produto->getPreco()  . "<br>"; ?></td>
+                    <td><?php echo "Preço: " .  " R$ " .  $produto->get_preco()  . "<br>"; ?></td>
                     <label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br>
                     <!-- <input type="submit" name="comprar" value="Comprar">
                     <label><input type="hidden" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br> -->
@@ -33,7 +39,6 @@ require __DIR__ . "/../Controller/produtoController.php";
             ?>
         </div>
 
-        <!-- <?php var_dump($_SESSION['nome']) ?> -->
         <input type="submit" value="Visualizar Carrinho">
     </form>
     <!-- <a href="/views/apaginaInicial.php">Voltar à pagina inicial</a> -->

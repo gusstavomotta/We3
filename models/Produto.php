@@ -14,41 +14,41 @@ class Produto
         $this->preco = $preco;
     }
 
-    public function getIdProduto()
+    public function get_id_produto()
     {
         return $this->idproduto;
     }
-    public function getDscProduto()
+    public function get_dsc_produto()
     {
         return $this->dscproduto;
     }
-    public function getPreco()
+    public function get_preco()
     {
         return $this->preco;
     }
 
-    public function setIdProduto(string $idproduto)
-    {
-        $this->idproduto = $idproduto;
-    }
-    public function setDscProduto(string $dscproduto)
-    {
-        $this->dscproduto = $dscproduto;
-    }
-    public function setPreco(float $preco)
-    {
-        $this->preco = $preco;
-    }
+    // public function set_id_produto(string $idproduto)
+    // {
+    //     $this->idproduto = $idproduto;
+    // }
+    // public function set_dsc_produto(string $dscproduto)
+    // {
+    //     $this->dscproduto = $dscproduto;
+    // }
+    // public function set_preco(float $preco)
+    // {
+    //     $this->preco = $preco;
+    // }
 
     public function __toString()
     {
-        $ret = "\nId do produto: " . $this->getIdProduto() . "\n";
-        $ret .= "Descrição do produto: " . $this->getDscProduto() . "\n";
-        $ret .= "Preço do produto: " . $this->getPreco() . "\n";
+        $ret = "\nId do produto: " . $this->get_id_produto() . "\n";
+        $ret .= "Descrição do produto: " . $this->get_dsc_produto() . "\n";
+        $ret .= "Preço do produto: " . $this->get_preco() . "\n";
         return (string) $ret;
     }
 
-    public static function verificaRetornaArrayProdutos($produtos)
+    public static function verifica_retorna_array_produtos($produtos)
     {
         if ($produtos && isset($produtos['result'])) {
 
@@ -69,5 +69,4 @@ class Produto
         }
         return $lista_de_produtos;
     }
-    //precisa criar uma função apra retornarum produto por ID
 }

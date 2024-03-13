@@ -1,23 +1,28 @@
-
 <?php
+
 session_start();
+
 require __DIR__ . "/../models/Requisicao.php";
 require __DIR__ . "/../models/Usuario.php";
 
 $cpf = $_POST["cpf"];
 $email = $_POST["email"];
+verifica_e_redireciona_usuario($cpf, $email);
 
-$pessoa_api = Requisicao::requisicaoLogin($cpf, $email);
-$usuario = Usuario::verificaRetornaUsuario($pessoa_api);
+function verifica_e_redireciona_usuario($cpf, $email)
+{
 
-if ($usuario != false) {
-    $_SESSION["cpf"] = $usuario->getCpf();
-    $_SESSION["email"] = $usuario->getEmail();
-    $_SESSION["id"] = $usuario->getIdPessoa();
-    $_SESSION["nome"] = $usuario->getNome();
+    $pessoa_api = Requisicao::requisicao_login($cpf, $email);
+    $usuario = Usuario::verifica_retorna_usuario($pessoa_api);
 
-    header("location: ../views/blistaDeProdutos.php");
-} else {
+    if ($usuario != false) {
+        $_SESSION["cpf"] = $usuario->get_cpf();
+        $_SESSION["email"] = $usuario->get_email();
+        $_SESSION["id"] = $usuario->get_id_pessoa();
+        $_SESSION["nome"] = $usuario->get_nome();
 
-    header("location: ../views/apaginaInicial.php");
+        header("location: ../views/blistaDeProdutos.php");
+    } else {
+        header("location: ../views/apaginaInicial.php");
+    }
 }

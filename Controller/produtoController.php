@@ -3,17 +3,17 @@
 require_once __DIR__ . "/../models/Requisicao.php";
 require_once __DIR__ . "/../models/Produto.php";
 
-function listarProdutos()
+function filtrar_produtos()
 {
-    $produtos = Requisicao::requisicaoProdutos();
-    $lista_de_produtos = Produto::verificaRetornaArrayProdutos($produtos);
+    $produtos = Requisicao::requisicao_produtos();
+    $lista_de_produtos = Produto::verifica_retorna_array_produtos($produtos);
     $lista_filtrada = [];
 
     foreach ($lista_de_produtos as $produtos) {
         if (
-            $produtos->getPreco() == 20
-            || $produtos->getPreco() == 50
-            || $produtos->getPreco() == 100
+            $produtos->get_preco() == 20
+            || $produtos->get_preco() == 50
+            || $produtos->get_preco() == 100
         ) {
 
             array_push($lista_filtrada, $produtos);
@@ -22,13 +22,35 @@ function listarProdutos()
     return $lista_filtrada;
 }
 
-function retornaProdutoPorId(array $lista_produtos, string $id)
+function retorna_produto_por_id(array $lista_produtos, string $id)
 {
 
     foreach ($lista_produtos as $produto) {
-        if ($produto->getIdProduto() == $id) {
+        if ($produto->get_id_produto() == $id) {
             return $produto;
         }
     }
     return false;
+}
+
+function retorna_carrinho_de_compras_sessao()
+{
+
+    if (isset($_POST['produto'])) {
+        $produtosSelecionados = $_POST['produto'];
+    }
+
+    if (!isset($_SESSION['produtos'])) {
+        $_SESSION['produtos'] = array();
+    }
+
+    foreach ($produtosSelecionados as $produtos) {
+
+        $id = retorna_id_do_produto($produtos);
+        $listaProdutos = filtrar_produtos();
+        $produto = (retorna_produto_por_id($listaProdutos, $id));
+
+        $_SESSION['produtos'][] = $produto;
+    }
+    return $_SESSION['produtos'];
 }

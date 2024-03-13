@@ -2,10 +2,8 @@
 
 class Requisicao
 {
-    /**
-     * Chama a API e retorna um usuário
-     */
-    public static function requisicaoLogin(String $cpf, String $email)
+
+    public static function requisicao_login(String $cpf, String $email)
     {
         $urlBase = 'https://ah.we.imply.com/loginDesafio3';
         $urlCompleta = "$urlBase/$cpf/$email";
@@ -33,10 +31,8 @@ class Requisicao
 
         return $decodificado;
     }
-    /**
-     * Chama a API e retorna uma json de produtos
-     */
-    public static function requisicaoProdutos()
+
+    public static function requisicao_produtos()
     {
 
         $url = 'https://ah.we.imply.com/getProdutos';
