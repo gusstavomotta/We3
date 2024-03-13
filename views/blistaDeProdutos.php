@@ -41,6 +41,7 @@ session_start();
     </form>
 
     <a href="/views/carrinhoDeCompras.php">Ir ao carrinho</a>
+    <a href="/views/encerraSessao.php">Encerrar sessão</a>
 
 </body>
 

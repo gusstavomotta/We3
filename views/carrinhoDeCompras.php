@@ -59,7 +59,9 @@ $produtos_carrinho = retorna_carrinho_de_compras_sessao();
 
     </p>
     <a href="/views/blistaDeProdutos.php">Adicionar mais produtos ao carrinho</a>
-    <a href="/views/finalizaSessao.php">Finalizar Compra</a>
+    <a href="/views/finalizaCompra.php">Finalizar compra</a>
+    <a href="/views/encerraSessao.php">Encerrar sessão</a>
+
 </body>
 
 </html>
