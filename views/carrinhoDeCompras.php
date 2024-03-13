@@ -1,5 +1,8 @@
 <?php
 require __DIR__ . "/../Controller/carrinhoController.php";
+require __DIR__ . "/../Controller/produtoController.php";
+require_once __DIR__ . "/../models/Carrinho.php";
+
 session_start();
 
 if (isset($_POST['produto'])) {
@@ -23,7 +26,21 @@ if (isset($_POST['produto'])) {
         ?>
     <div class="grid">
         <div class="item">
-            <?php print(pegaIdString($produtos));
+            <?php 
+            
+            $id = pegaIdString($produtos);
+            $listaProdutos = listarProdutos();
+
+            $produto = (retornaProdutoPorId($listaProdutos, $id));
+
+            $carrinho = [$produto]; 
+
+            print($produto->contarQtdProdutos($carrinho));
+            echo "<br>";
+            print($produto->somarSubtotal($carrinho));
+            echo "<br>";
+            //print($produto->contarQtdProdutos());
+
             //var_dump($produtos)
             ?>
         </div>

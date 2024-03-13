@@ -13,10 +13,12 @@ class Carrinho
     /**
      * Adiciona um produto no carrinho de compras
      */
-    public function adicionarProdutoAoCarrinho($produto)
-    {
-        array_push(self::$carrinho_compras, $produto);
-    }
+
+    // public function adicionarProdutoAoCarrinho($produto)
+    // {
+    //     array_push(self::$carrinho_compras, $produto);
+    // }
+
     /**
      * 
      * Percorre a lista de compras, procura o ID passado e remove da lista o produto
@@ -33,17 +35,17 @@ class Carrinho
     /**
      * Conta o número de produtos dentro do carrinho de compras
      */
-    public function contarQtdProdutos()
+    public function contarQtdProdutos($listaProdutos)
     {
-        return count(self::$carrinho_compras);
+        return count($listaProdutos);
     }
     /**
      * Realiza a soma do subtotal do carrinho
      */
-    public function somarSubtotal()
+    public function somarSubtotal($listaProdutos)
     {
         $subtotal = 0;
-        foreach (self::$carrinho_compras as $produto) {
+        foreach ($listaProdutos as $produto) {
             $subtotal += $produto->getPreco();
         }
         return $subtotal;
