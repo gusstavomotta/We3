@@ -9,18 +9,24 @@ if (isset($_POST['produto'])) {
     $produtosSelecionados = $_POST['produto'];
 }
 
-if (!isset($_SESSION['produtos'])) {
+if (isset($_SESSION['produtos'])) {
 
     foreach ($produtosSelecionados as $produtos) {
+
+        var_dump($produto);
 
         $id = pegaIdString($produtos);
         $listaProdutos = listarProdutos();
         $produto = (retornaProdutoPorId($listaProdutos, $id));
 
-        array_push($_SESSION['produtos'], $produto);
+        $_SESSION['produtos'][] = $produto;
     }
 }
-var_dump($_SESSION['produtos']);
+$produtos = $_SESSION['produtos'];
+
+foreach ($produtos as $produto) {
+    var_dump($produto);
+}
 
 ?>
 <!DOCTYPE html>
