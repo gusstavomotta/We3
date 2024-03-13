@@ -1,5 +1,11 @@
 <?php
+
 session_start();
+if (isset($_SESSION["mensagem_erro"])) {
+    echo '<h1>' . $_SESSION["mensagem_erro"] . '</h1>';
+    unset($_SESSION["mensagem_erro"]); // Limpa a mensagem de erro para não ser exibida novamente
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

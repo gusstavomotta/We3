@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 require __DIR__ . "/../models/Requisicao.php";
@@ -11,7 +10,6 @@ if (isset($_POST["cpf"]) || isset($_POST["email"])) {
 
 function verifica_e_redireciona_usuario(String $cpf, String $email)
 {
-
     $pessoa_api = Requisicao::requisicao_login($cpf, $email);
     $usuario = Usuario::verifica_retorna_usuario($pessoa_api);
 
@@ -21,8 +19,11 @@ function verifica_e_redireciona_usuario(String $cpf, String $email)
         $_SESSION["id"] = $usuario->get_id_pessoa();
         $_SESSION["nome"] = $usuario->get_nome();
 
-        header("location: ../views/blistaDeProdutos.php");
+        header("Location: ../views/blistaDeProdutos.php");
+        exit; // Importante sair após o redirecionamento
     } else {
-        header("location: ../views/apaginaInicial.php");
+        $_SESSION["mensagem_erro"] = "Email ou CPF inválidos, tente novamente!";
+        header("Location: ../views/apaginaInicial.php");
+        exit; // Importante sair após o redirecionamento
     }
 }
