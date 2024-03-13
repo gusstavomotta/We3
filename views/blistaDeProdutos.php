@@ -23,7 +23,7 @@ require __DIR__ . "/../Controller/produtoController.php";
                 <div class="item">
                     <?php echo $produto->getDscProduto() . "<br>"; ?>
                     <?php echo "<br>"?>
-                    <td><?php echo "Preço: " . $produto->getPreco() . " R$" . "<br>"; ?></td>
+                    <td><?php echo "Preço: " .  " R$ " .  $produto->getPreco()  . "<br>"; ?></td>
                     <label><input type="checkbox" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br>
                     <!-- <input type="submit" name="comprar" value="Comprar">
                     <label><input type="hidden" name="produto[]" id="<?php echo $key; ?>" value="<?php echo $produto; ?>"></label><br> -->
