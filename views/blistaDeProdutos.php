@@ -12,7 +12,7 @@ require __DIR__ . "/../Controller/produtoController.php";
 </head>
 
 <body>
-    <h1>Lista dos produtos</h1>
+    <h1>Lista de produtos</h1>
     <form action="carrinhoDeCompras.php" method="post">
         <div class="grid-container">
 

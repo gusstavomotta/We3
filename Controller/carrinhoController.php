@@ -19,15 +19,12 @@ function criarCarrinho($lista_de_produtos)
 
 function pegaIdString($string)
 {
-
      $offset = strpos($string, "Id do produto: ");
 
-     if($offset !== false){
+     if ($offset !== false) {
           $idProduto = substr($string, $offset + strlen("Id do produto: "), 40);
-     
-
-     return $idProduto;
-     } else{
+          return $idProduto;
+     } else {
           echo "Id não encontrado";
      }
 }

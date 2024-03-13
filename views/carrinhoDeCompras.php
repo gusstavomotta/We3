@@ -23,8 +23,8 @@ if (isset($_POST['produto'])) {
         ?>
     <div class="grid">
         <div class="item">
-            <?php print(pegaIdString($produtos)); 
-                //var_dump($produtos)
+            <?php print(pegaIdString($produtos));
+            //var_dump($produtos)
             ?>
         </div>
     </div>
