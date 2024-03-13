@@ -43,7 +43,7 @@ if (isset($_POST['produto'])) {
     </div>
 
     </p>
-    <a href="/views/blistaDeProdutos.php">Voltar à lista de produtos</a>
+    <a href="/views/blistaDeProdutos.php">Continuar Comprando</a>
 </body>
 
 </html>
