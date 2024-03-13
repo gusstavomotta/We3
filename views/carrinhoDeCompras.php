@@ -36,8 +36,8 @@ if (isset($_POST['produto'])) {
     <div class="grid">
         <div class="item">
             <?php
-            print_r($carrinho);
-            $carrinho_compras = criarCarrinho($carrinho);
+
+            criarCarrinho($carrinho);
             ?>
         </div>
     </div>

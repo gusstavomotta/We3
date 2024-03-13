@@ -6,6 +6,10 @@ function criarCarrinho($lista_de_produtos)
      $carro = new Carrinho();
      $carro->adicionarProdutoAoCarrinho($lista_de_produtos);
 
+     foreach ($lista_de_produtos as $produto) {
+          print($produto->getPreco());
+     }
+
      var_dump("\n" . "Quantidade de produtos: " . $carro->contarQtdProdutos() . "\n");
      var_dump("Subtotal: " . $carro->somarSubtotal() . "\n");
 }
