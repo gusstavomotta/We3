@@ -15,7 +15,7 @@ function retorna_id_do_produto($string)
      $offset = strpos($string, "Id do produto: ");
 
      if ($offset !== false) {
-          $idProduto = substr($string, $offset + strlen("Id do produto: "), 40);
+          $idProduto = substr($string, $offset + strlen("Id do produto: "), 32);
 
 
           return $idProduto;

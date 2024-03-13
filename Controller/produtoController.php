@@ -44,13 +44,11 @@ function retorna_carrinho_de_compras_sessao()
         $_SESSION['produtos'] = array();
     }
 
-    foreach ($produtosSelecionados as $produtos) {
+    $listaProdutos = filtrar_produtos();
+    $produto = (retorna_produto_por_id($listaProdutos, $produtosSelecionados));
 
-        $id = retorna_id_do_produto($produtos);
-        $listaProdutos = filtrar_produtos();
-        $produto = (retorna_produto_por_id($listaProdutos, $id));
+    $_SESSION['produtos'][] = $produto;
+    var_dump($_SESSION['produtos']);
 
-        $_SESSION['produtos'][] = $produto;
-    }
     return $_SESSION['produtos'];
 }
