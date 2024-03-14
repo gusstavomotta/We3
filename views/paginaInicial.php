@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <h1>Filmes em cartaz</h1>
     <form action="../views/listaDeProdutos.php" method="post">
 
         <div class="filmes-container">
