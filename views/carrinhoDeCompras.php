@@ -65,7 +65,7 @@ $subTotal = $carrinho->somar_subtotal();
 
                 <form method="post" action="../Controller/removerProdutoController.php">
                     <input type="hidden" name="produto" value="<?php echo $produto->get_id_produto(); ?>">
-                    <button type="submit">Remover do Carrinho</button>
+                    <button class="comprar-botao" type="submit">Remover do Carrinho</button>
                 </form>
 
             <?php
