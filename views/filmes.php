@@ -1,5 +1,8 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,37 +58,38 @@
         }
     </style> -->
 </head>
-    <form action="" method="post">
+<form action="" method="post">
 
-<div class="filmes-container">
-                <div class="filme">
-                    <img src="../public/Images/ForrestGump.webp" alt="Forrest Gump">
-                    <h2>Forrest Gump</h2>
-                    <a href="/views/blistaDeProdutos.php" class="comprar-botao">Comprar Ingressos</a>
-                </div>
-          
-        
+    <div class="filmes-container">
         <div class="filme">
-                    <img src=" ../public/Images/BackToTheFuture.webp" alt="De volta para o futuro III">
-                    <h2>De volta para o futuro III</h2>
-                    <a href="/views/blistaDeProdutos.php" class="comprar-botao">Comprar Ingressos</a>
-                </div>
-          
-                <div class="filme">
-                    <img src="../public/Images/IndianaJones.jpg" alt="Indiana Jones e a Última Cruzada">
-                    <h2>Indiana Jones e a Última Cruzada</h2>
-                    <a href="/views/blistaDeProdutos.php" class="comprar-botao">Comprar Ingressos</a>
-                </div>
+            <img src="../public/Images/ForrestGump.webp" alt="Forrest Gump">
+            <h2>Forrest Gump</h2>
+            <a href="/views/blistaDeProdutos.php" class="comprar-botao">Comprar Ingressos</a>
+        </div>
 
-                <div class="filme">
-                    <img src="../public/Images/StarWars.jpg" alt="Star Wars Episódio IV">
-                    <h2>Star Wars Episódio IV</h2>
-                    <a href="/views/blistaDeProdutos.php" class="comprar-botao">Comprar Ingressos</a>
-                </div>
-</div>
+
+        <div class="filme">
+            <img src=" ../public/Images/BackToTheFuture.webp" alt="De volta para o futuro III">
+            <h2>De volta para o futuro III</h2>
+            <a href="/views/blistaDeProdutos.php" class="comprar-botao">Comprar Ingressos</a>
+        </div>
+
+        <div class="filme">
+            <img src="../public/Images/IndianaJones.jpg" alt="Indiana Jones e a Última Cruzada">
+            <h2>Indiana Jones e a Última Cruzada</h2>
+            <a href="/views/blistaDeProdutos.php" class="comprar-botao">Comprar Ingressos</a>
+        </div>
+
+        <div class="filme">
+            <img src="../public/Images/StarWars.jpg" alt="Star Wars Episódio IV">
+            <h2>Star Wars Episódio IV</h2>
+            <a href="/views/blistaDeProdutos.php" class="comprar-botao">Comprar Ingressos</a>
+        </div>
+    </div>
 
 </form>
 
 
 </body>
+
 </html>

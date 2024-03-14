@@ -2,9 +2,9 @@
 require __DIR__ . "/../Controller/produtoController.php";
 session_start();
 
-    if(isset($_SESSION['cpf']) && isset($_SESSION['email'])){
-        header("Location: ../views/apaginaInicial.php");
-    }
+if (!isset($_SESSION['cpf']) || !isset($_SESSION['email'])) {
+    header("Location: ../views/apaginaInicial.php");
+}
 ?>
 
 <!DOCTYPE html>
