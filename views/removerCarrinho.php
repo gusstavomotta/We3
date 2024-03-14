@@ -6,10 +6,13 @@ require __DIR__ . "/../models/Produto.php";
 session_start();
 
 $id_produto = $_POST['produto'];
+$array = array();
 
 foreach ($_SESSION['produtos'] as $produtos) {
-    var_dump($produtos);
+
+    array_push($array, $produtos);
 }
 
-$_SESSION['produtos'] = remover_produto_do_carrinho($_SESSION['produtos'], $id_produto);
+
+$_SESSION['produtos'] = remover_produto_do_carrinho($array, $id_produto);
 header("Location: ../views/carrinhoDeCompras.php");

@@ -25,6 +25,7 @@ $produtos_carrinho = retorna_carrinho_de_compras_sessao();
             <?php
 
             foreach ($produtos_carrinho as $produto) {
+                $produto = unserialize($produto);
                 $carrinho = cria_e_adiciona_produto_ao_carrinho($produto);
             }
 
@@ -44,6 +45,7 @@ $produtos_carrinho = retorna_carrinho_de_compras_sessao();
                 <div class="grid">
                     <div class="item">
                         <?php
+                        $produto = unserialize($produto);
                         print("Descrição do produto: " . $produto->get_dsc_produto());
                         print("<br>");
                         print("Preço do produto: " . $produto->get_preco());

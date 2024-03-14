@@ -12,6 +12,7 @@ function  remover_produto_do_carrinho(array $array, String $id)
 {
 
      foreach ($array as $chave => $produto) {
+          $produto = unserialize($produto);
           if ($produto->get_id_produto() == $id) {
                unset($array[$chave]);
           }
