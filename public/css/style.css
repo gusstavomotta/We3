@@ -108,7 +108,8 @@ h1 {
   margin: auto;
 }
 
-.comprar-botao {
+.comprar-botao,
+a {
   display: block;
   background-color: #c30000;
   color: white;

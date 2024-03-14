@@ -8,14 +8,17 @@ $lista_de_produtos = $_SESSION['lista_de_produtos'];
 $produtos_carrinho = retorna_carrinho_de_compras_sessao($lista_de_produtos);
 
 $carrinho = new Carrinho();
+
 foreach ($produtos_carrinho as $produto) {
     $produto = unserialize($produto);
     $carrinho->adicionar_produto_ao_carrinho($produto);
 }
 
-$carrinhoVazio = empty($carrinho->get_carrinho());
+$produtos_carrinho = $carrinho->processa_produtos($carrinho->get_carrinho());
+$carrinhoVazio = empty($produtos_carrinho);
 $quantidadeProdutos = $carrinho->contar_qtd_produtos();
 $subTotal = $carrinho->somar_subtotal();
+
 ?>
 
 <!DOCTYPE html>
@@ -55,9 +58,10 @@ $subTotal = $carrinho->somar_subtotal();
                     <div class="item">
                         <?php
 
-                        $produto = unserialize($produto);
                         echo "Descrição do produto: " . $produto->get_dsc_produto() . "<br>";
                         echo "Preço do produto: " . $produto->get_preco() . "<br>";
+                        echo "Quantidade do produto: " . $produto->get_count() . "<br>";
+
 
                         ?>
                     </div>
@@ -75,7 +79,7 @@ $subTotal = $carrinho->somar_subtotal();
     </div>
 
     </p>
-    <a href="/views/listaDeProdutos.php">Voltar</a>
+    <a href="/views/listaDeProdutos.php">Adicionar mais produtos</a>
     <a href="/views/finalizaCompra.php">Finalizar compra</a>
     <a href="/../Controller/encerraSessaoController.php">Encerrar sessão</a>
 

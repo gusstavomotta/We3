@@ -6,6 +6,7 @@ class Produto
     private $idproduto;
     private $dscproduto;
     private $preco;
+    private $count = 1;
     public function __construct(string $idproduto, string $dscproduto, float $preco)
     {
 
@@ -26,6 +27,10 @@ class Produto
     public function get_preco()
     {
         return $this->preco;
+    }
+    public function get_count()
+    {
+        return $this->count;
     }
     /**
      * Essa função é feita para receber o retorno da API de produtos
@@ -52,5 +57,10 @@ class Produto
             return $lista_de_produtos;
         }
         return false;
+    }
+    public function incrementa_count()
+    {
+        $this->count += 1;
+        return $this->count;
     }
 }

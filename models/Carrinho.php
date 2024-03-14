@@ -61,4 +61,26 @@ class Carrinho
         }
         return $lista_de_produtos;
     }
+    /**
+     * Esssa função verifica se um produto foi comprado mais de uma vez
+     * Caso verdadeiro o contador de quantidade do produto é incrementado
+     * Caso falso o produto é adicionado na lista de produtos filtrados
+     * Retorna a lista com os produtos filtrados
+     */
+    function processa_produtos($array): array
+    {
+        $produtos_filtrados = [];
+
+        foreach ($array as &$produto) {
+            $produtoId = $produto->get_id_produto();
+
+            if (array_key_exists($produtoId, $produtos_filtrados)) {
+                $produtos_filtrados[$produtoId]->incrementa_count();
+            } else {
+                $produtos_filtrados[$produtoId] = $produto;
+            }
+        }
+
+        return $produtos_filtrados;
+    }
 }

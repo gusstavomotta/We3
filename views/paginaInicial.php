@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../public/css/style.css">
     <style>
         body {
-            background-image: url("../public/Images/cdf7175d038ff9397b7666349e552924.jpg");
+            background-image: url("../public/Images/5fb066ec8a0edd8e5aa8b4f2ed1b2e8e.jpg");
         }
     </style>
     <title>Pagina inicial | Filmes </title>
