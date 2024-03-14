@@ -5,6 +5,5 @@ unset($_SESSION['cpf']);
 unset($_SESSION['email']);
 unset($_SESSION['nome']);
 unset($_SESSION['id']);
-
 sleep(2);
 header("Location: ../views/apaginaInicial.php");
