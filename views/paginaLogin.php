@@ -24,7 +24,7 @@ if (isset($_SESSION["mensagem_erro"])) {
 </head>
 
 <body>
-    <h1>Entrar</h1>
+    <h1>Cinema Imply</h1>
     <form action="../Controller/loginController.php" method="post">
         <div class="form">
             <br>
