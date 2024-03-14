@@ -3,6 +3,11 @@
 require_once __DIR__ . "/../models/Requisicao.php";
 require_once __DIR__ . "/../models/Produto.php";
 
+/**
+ * Faz a requisição à API e retorna uma lista com produtos, 
+ * Essa lista de produtos é filtrada para separar apenas os produtos que queremos, 
+ * A lista é retornada
+ */
 function filtrar_produtos()
 {
     $produtos = Requisicao::requisicao_produtos();
@@ -27,7 +32,10 @@ function filtrar_produtos()
     }
     return false;
 }
-
+/**
+ * Uma lista de produtos e um ID são passados como parâmetros
+ * O metodo percorre a lista procurando o ID informado e retorna o Objeto produto
+ */
 function retorna_produto_por_id(array $lista_produtos, string $id)
 {
     if (!empty($lista_produtos) && !empty($id)) {
@@ -39,7 +47,11 @@ function retorna_produto_por_id(array $lista_produtos, string $id)
     }
     return false;
 }
-
+/**
+ * Essa função é usada para criar/atualizar o carrinho de compras salvo na sessao do usuario
+ * Se houver algum novo produto setado o programa atualiza a lista
+ * Se não houver novo produto a lista é retornada
+ */
 function retorna_carrinho_de_compras_sessao()
 {
 
@@ -48,9 +60,11 @@ function retorna_carrinho_de_compras_sessao()
     }
 
     if (isset($_POST['produto'])) {
+
         $produtosSelecionados = $_POST['produto'];
         $listaProdutos = filtrar_produtos();
         $produto = serialize(retorna_produto_por_id($listaProdutos, $produtosSelecionados));
+
         array_push($_SESSION['produtos'], $produto);
     }
 

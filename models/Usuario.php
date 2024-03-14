@@ -16,7 +16,7 @@ class Usuario
         $this->cpf = $cpf;
         $this->idpessoa = $idpessoa;
     }
-
+    //Getters
     public function get_nome()
     {
         return $this->nome;
@@ -33,7 +33,10 @@ class Usuario
     {
         return $this->idpessoa;
     }
-
+    /**
+     * Essa função existe para receber o retorno da API de usuários
+     * A função valida se os dados estão setados, cria um objeto USUARIO e retorna
+     */
     public static function verifica_retorna_usuario(array $pessoa)
     {
 

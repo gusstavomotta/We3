@@ -2,7 +2,9 @@
 
 class Requisicao
 {
-
+    /**
+     * Faz a requisição à API e retorna o resultado
+     */
     public static function requisicao_login(String $cpf, String $email)
     {
         $urlBase = 'https://ah.we.imply.com/loginDesafio3';
@@ -30,7 +32,9 @@ class Requisicao
 
         return $decodificado;
     }
-
+    /**
+     * Faz a requisição à API e retorna o resultado
+     */
     public static function requisicao_produtos()
     {
 

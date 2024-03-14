@@ -4,10 +4,17 @@ session_start();
 require __DIR__ . "/../models/Requisicao.php";
 require __DIR__ . "/../models/Usuario.php";
 
-if (isset($_POST["cpf"]) && isset($_POST["email"])) {
-    verifica_e_redireciona_usuario($_POST["cpf"], $_POST["email"]);
-}
+$cpf = $_POST["cpf"];
+$email = $_POST["email"];
 
+if (isset($cpf) && isset($email)) {
+    verifica_e_redireciona_usuario($cpf, $email);
+}
+/**
+ * Verifica se o CPF e EMAIl passados são válidos
+ * Caso verdadeiro redireciona o usuário para a pagina inicial logado
+ * Caso falso redireciona para a pagina de Login com uma mensagem de erro
+ */
 function verifica_e_redireciona_usuario(String $cpf, String $email)
 {
     $pessoa_api = Requisicao::requisicao_login($cpf, $email);

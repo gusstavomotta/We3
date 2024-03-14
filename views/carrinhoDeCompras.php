@@ -1,12 +1,21 @@
 <?php
-require __DIR__ . "/../Controller/carrinhoController.php";
 require __DIR__ . "/../Controller/produtoController.php";
 require_once __DIR__ . "/../models/Carrinho.php";
 
 session_start();
 $produtos_carrinho = retorna_carrinho_de_compras_sessao();
 
+$carrinho = new Carrinho();
+foreach ($produtos_carrinho as $produto) {
+    $produto = unserialize($produto);
+    $carrinho->adicionar_produto_ao_carrinho($produto);
+}
+
+$carrinhoVazio = empty($carrinho->get_carrinho());
+$quantidadeProdutos = $carrinho->contar_qtd_produtos();
+$subTotal = $carrinho->somar_subtotal();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,42 +31,35 @@ $produtos_carrinho = retorna_carrinho_de_compras_sessao();
     <p>
     <div class="grid">
         <div class="item">
+
             <?php
-
-            foreach ($produtos_carrinho as $produto) {
-                $produto = unserialize($produto);
-                $carrinho = cria_e_adiciona_produto_ao_carrinho($produto);
-            }
-
-            if (empty($carrinho)) {
+            if ($carrinhoVazio) {
                 echo "Carrinho vazio. ";
                 echo '<a href="/views/listaDeProdutos.php">Voltar à pagina de produtos</a>';
                 exit;
             }
 
-            print("Quantidade de produtos: " . $carrinho->contar_qtd_produtos());
-            print("<br>");
-            print("Subtotal: " . $carrinho->somar_subtotal());
-            print("<br>");
+            echo "Quantidade de produtos: " . $quantidadeProdutos . "<br>";
+            echo "Subtotal: " . $subTotal . "<br>";
 
             foreach ($produtos_carrinho as $produto) {
             ?>
                 <div class="grid">
                     <div class="item">
                         <?php
+
                         $produto = unserialize($produto);
-                        print("Descrição do produto: " . $produto->get_dsc_produto());
-                        print("<br>");
-                        print("Preço do produto: " . $produto->get_preco());
-                        print("<br>");
+                        echo "Descrição do produto: " . $produto->get_dsc_produto() . "<br>";
+                        echo "Preço do produto: " . $produto->get_preco() . "<br>";
+
                         ?>
                     </div>
                 </div>
-                <form method="post" action="../views/removerCarrinho.php">
+
+                <form method="post" action="../Controller/removerProdutoController.php">
                     <input type="hidden" name="produto" value="<?php echo $produto->get_id_produto(); ?>">
                     <button type="submit">Remover do Carrinho</button>
                 </form>
-                <!-- <button type="submit" name="produto" value="<?php echo $produto->get_id_produto(); ?>">Remover do Carrinho</button> -->
 
             <?php
             }
@@ -68,7 +70,7 @@ $produtos_carrinho = retorna_carrinho_de_compras_sessao();
     </p>
     <a href="/views/listaDeProdutos.php">Adicionar mais produtos</a>
     <a href="/views/finalizaCompra.php">Finalizar compra</a>
-    <a href="/views/encerraSessao.php">Encerrar sessão</a>
+    <a href="/../Controller/encerraSessaoController.php">Encerrar sessão</a>
 
 </body>
 

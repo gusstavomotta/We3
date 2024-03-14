@@ -14,6 +14,7 @@ class Produto
         $this->preco = $preco;
     }
 
+    //Getters
     public function get_id_produto()
     {
         return $this->idproduto;
@@ -26,21 +27,12 @@ class Produto
     {
         return $this->preco;
     }
-
-    // public function set_id_produto(string $idproduto)
-    // {
-    //     $this->idproduto = $idproduto;
-    // }
-    // public function set_dsc_produto(string $dscproduto)
-    // {
-    //     $this->dscproduto = $dscproduto;
-    // }
-    // public function set_preco(float $preco)
-    // {
-    //     $this->preco = $preco;
-    // }
-
-
+    /**
+     * Essa função é feita para receber o retorno da API de produtos
+     * Ela recebe como parâmetro a lista de produtos
+     * Verifica se tudo está setado corretamente
+     * Percorre a lista, salva os dados em um objeto PRODUTO, salva em um array e retorna o array
+     */
     public static function verifica_retorna_array_produtos(array $produtos)
     {
         if ($produtos && isset($produtos['result'])) {
