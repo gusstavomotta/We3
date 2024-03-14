@@ -80,7 +80,7 @@ h1 {
 }
 
 .filme {
-  width: calc(30% - 20px);
+  width: calc(20% - 20px);
   height: 620px;
   margin-bottom: 50px;
   padding: 20px;
