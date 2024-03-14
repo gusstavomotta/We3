@@ -7,8 +7,13 @@ if (!isset($_SESSION['cpf']) || !isset($_SESSION['email'])) {
     header("Location: ../views/paginaLogin.php");
 }
 
+if (!isset($_SESSION['lista_de_produtos'])) {
+    $_SESSION['lista_de_produtos'] = filtrar_produtos();
+}
+
 $filme = $_POST['filme'];
-$lista_de_produtos = filtrar_produtos();
+$lista_de_produtos = $_SESSION['lista_de_produtos'];
+
 ?>
 
 <!DOCTYPE html>

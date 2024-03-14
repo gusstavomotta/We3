@@ -52,7 +52,7 @@ function retorna_produto_por_id(array $lista_produtos, string $id)
  * Se houver algum novo produto setado o programa atualiza a lista
  * Se não houver novo produto a lista é retornada
  */
-function retorna_carrinho_de_compras_sessao()
+function retorna_carrinho_de_compras_sessao(array $lista_de_produtos)
 {
 
     if (!isset($_SESSION['produtos'])) {
@@ -60,10 +60,8 @@ function retorna_carrinho_de_compras_sessao()
     }
 
     if (isset($_POST['produto'])) {
-
         $produtosSelecionados = $_POST['produto'];
-        $listaProdutos = filtrar_produtos();
-        $produto = serialize(retorna_produto_por_id($listaProdutos, $produtosSelecionados));
+        $produto = serialize(retorna_produto_por_id($lista_de_produtos, $produtosSelecionados));
 
         array_push($_SESSION['produtos'], $produto);
     }

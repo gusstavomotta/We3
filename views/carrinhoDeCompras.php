@@ -3,7 +3,9 @@ require __DIR__ . "/../Controller/produtoController.php";
 require_once __DIR__ . "/../models/Carrinho.php";
 
 session_start();
-$produtos_carrinho = retorna_carrinho_de_compras_sessao();
+
+$lista_de_produtos = $_SESSION['lista_de_produtos'];
+$produtos_carrinho = retorna_carrinho_de_compras_sessao($lista_de_produtos);
 
 $carrinho = new Carrinho();
 foreach ($produtos_carrinho as $produto) {
