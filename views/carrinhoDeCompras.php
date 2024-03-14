@@ -51,6 +51,12 @@ $produtos_carrinho = retorna_carrinho_de_compras_sessao();
                         ?>
                     </div>
                 </div>
+                <form method="post" action="../views/removerCarrinho.php">
+                    <input type="hidden" name="produto" value="<?php echo $produto->get_id_produto(); ?>">
+                    <button type="submit">Remover do Carrinho</button>
+                </form>
+                <!-- <button type="submit" name="produto" value="<?php echo $produto->get_id_produto(); ?>">Remover do Carrinho</button> -->
+
             <?php
             }
             ?>

@@ -19,7 +19,7 @@ if (isset($_SESSION["mensagem_erro"])) {
 </head>
 
 <body>
-    <h1>Pagina inicial</h1>
+    <h1>Cine Imply</h1>
     <form action="../Controller/loginController.php" method="post">
         <div class="body">
             <div class="form">

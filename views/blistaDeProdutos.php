@@ -29,7 +29,7 @@ session_start();
                     <?php echo "<br>" ?>
                     <?php echo "Preço: R$ " .  $produto->get_preco()  . "<br>"; ?>
 
-                    <button type="submit" name="produto" value="<?php echo $produto->get_id_produto(); ?>">Comprar</button>
+                    <button type="submit" name="produto" value="<?php echo $produto->get_id_produto(); ?>">Adicionar ao carrinho</button>
 
                 </div>
             <?php

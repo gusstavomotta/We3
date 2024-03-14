@@ -16,6 +16,7 @@ unset($_SESSION['produtos']);
 
 <body>
     <h1>Compra finalizada com sucesso!</h1>
+    <h1>Obrigado pela preferência <?php echo $_SESSION['nome'] ?></h1>
 </body>
 
 </html>

@@ -15,15 +15,7 @@ class Carrinho
         array_push(self::$carrinho_compras, $produto);
     }
 
-    public function remover_produto_do_carrinho(String $id)
-    {
 
-        foreach (self::$carrinho_compras as $chave => $produto) {
-            if ($produto->get_id_produto() == $id) {
-                unset(self::$carrinho_compras[$chave]);
-            }
-        }
-    }
 
     public function contar_qtd_produtos()
     {
