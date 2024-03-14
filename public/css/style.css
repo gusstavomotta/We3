@@ -43,7 +43,7 @@ a {
 
 body {
   font-family: Arial;
-  /* background-image: url("../Images/5fb066ec8a0edd8e5aa8b4f2ed1b2e8e.jpg"); */
+  background-image: url("../Images/cdf7175d038ff9397b7666349e552924.jpg"); 
 }
 
 h1 {
@@ -55,7 +55,6 @@ h1 {
   margin-top: 0;
   width: 500px;
   margin-left: 580px;
-  /* border-width: 100px; */
 }
 
 .grid-container {
@@ -93,6 +92,13 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  background-color: #954646; 
+  border: 1px solid #140101; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  padding: 20px;
+
+  color: #fff;
 }
 
 .filme img {
