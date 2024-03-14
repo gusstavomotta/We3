@@ -23,11 +23,11 @@ $lista_de_produtos = $_SESSION['lista_de_produtos'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css">
-    <title>Pagina de produtos</title>
+    <title>Venda de Produtos</title>
 </head>
 
 <body>
-    <h1>Lista de produtos</h1>
+    <h1>Produtos</h1>
 
     <form action="carrinhoDeCompras.php" method="post">
 
@@ -52,9 +52,10 @@ $lista_de_produtos = $_SESSION['lista_de_produtos'];
         </div>
     </form>
 
-    <a href="/views/carrinhoDeCompras.php">Ir ao carrinho</a>
-    <a href="/../Controller/encerraSessaoController.php">Encerrar sessão</a>
     <a href="/views/paginaInicial.php">Voltar</a>
+    <a href="/views/carrinhoDeCompras.php">Meu carrinho</a>
+    <a href="/../Controller/encerraSessaoController.php">Encerrar sessão</a>
+
 
 </body>
 

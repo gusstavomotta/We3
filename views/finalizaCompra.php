@@ -15,7 +15,8 @@ session_start();
 
 <body>
     <h1>Compra finalizada com sucesso!</h1>
-    <h1>Obrigado pela preferência <?php echo $_SESSION['nome'] ?></h1>
+    <h1>Informações sobre o pedido foram enviadas para o email: <?php echo $_SESSION['email'] ?></h1>
+
 </body>
 
 </html>

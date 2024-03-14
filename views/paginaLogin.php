@@ -15,11 +15,11 @@ if (isset($_SESSION["mensagem_erro"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css">
-    <title>Login</title>
+    <title>Cinema IMPLY | Login</title>
 </head>
 
 <body>
-    <h1>Login</h1>
+    <h1>Entrar</h1>
     <form action="../Controller/loginController.php" method="post">
         <div class="body-login">
             <div class="form">
@@ -33,7 +33,7 @@ if (isset($_SESSION["mensagem_erro"])) {
                 <input type="text" name="email" id="email">
                 <br>
                 <br>
-                <input type="submit" value="Realizar Login">
+                <input type="submit" value="Entrar">
             </div>
         </div>
     </form>
