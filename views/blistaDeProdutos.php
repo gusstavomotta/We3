@@ -20,8 +20,8 @@ session_start();
 <body>
     <h1>Lista de produtos</h1>
     <form action="carrinhoDeCompras.php" method="post">
+        <h1><?php printf($_POST['filme'])?></h1>
         <div class="grid-container">
-
             <?php
             $lista_de_produtos = filtrar_produtos();
             foreach ($lista_de_produtos as $key => $produto) {
@@ -32,7 +32,7 @@ session_start();
                     <?php echo "<br>" ?>
                     <?php echo "Preço: R$ " .  $produto->get_preco()  . "<br>"; ?>
 
-                    <button type="submit" name="produto" value="<?php echo $produto->get_id_produto(); ?>">Adicionar ao carrinho</button>
+                    <button class="comprar-botao" type="submit" name="produto" value="<?php echo $produto->get_id_produto(); ?>">Adicionar ao carrinho</button>
 
                 </div>
             <?php
