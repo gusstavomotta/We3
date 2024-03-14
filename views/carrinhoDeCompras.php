@@ -79,9 +79,9 @@ $subTotal = $carrinho->somar_subtotal();
     </div>
 
     </p>
-    <a href="/views/listaDeProdutos.php">Adicionar mais produtos</a>
-    <a href="/views/finalizaCompra.php">Finalizar compra</a>
-    <a href="/../Controller/encerraSessaoController.php">Encerrar sessão</a>
+    <a class="a" href="/views/listaDeProdutos.php">Adicionar mais produtos</a>
+    <a class="a" href="/views/finalizaCompra.php">Finalizar compra</a>
+    <a class="a" href="/../Controller/encerraSessaoController.php">Encerrar sessão</a>
 
 </body>
 

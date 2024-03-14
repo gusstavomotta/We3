@@ -98,10 +98,16 @@ h1 {
 .comprar-botao:active {
   background-color: #c30000;
 }
+.a:hover {
+  background-color: #a10606;
+}
+.a:active {
+  background-color: #c30000;
+}
 .comprar-botao,
 input[type="submit"] {
-  width: auto; /* Isso permite que o botão tenha a largura do conteúdo */
-  max-width: 300px; /* Limita a largura máxima a 300px, como os links */
+  width: auto;
+  max-width: 300px;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -112,5 +118,3 @@ input[type="submit"] {
   cursor: pointer;
   text-decoration: none;
 }
-
-/* Restante do seu CSS */
