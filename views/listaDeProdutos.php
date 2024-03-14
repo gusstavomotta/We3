@@ -56,10 +56,13 @@ $lista_de_produtos = $_SESSION['lista_de_produtos'];
             ?>
         </div>
     </form>
+    <footer>
 
-    <a class="a" href="/views/paginaInicial.php">Voltar</a>
-    <a class="a" href="/views/carrinhoDeCompras.php">Meu carrinho</a>
-    <a class="a" href="/../Controller/encerraSessaoController.php">Encerrar sessão</a>
+        <a class="a" href="/views/paginaInicial.php">Voltar</a>
+        <a class="a" href="/views/carrinhoDeCompras.php">Meu carrinho</a>
+        <a class="a" href="/../Controller/encerraSessaoController.php">Encerrar sessão</a>
+
+    </footer>
 
 
 </body>

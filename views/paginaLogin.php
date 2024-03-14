@@ -26,20 +26,19 @@ if (isset($_SESSION["mensagem_erro"])) {
 <body>
     <h1>Entrar</h1>
     <form action="../Controller/loginController.php" method="post">
-        <div class="body-login">
-            <div class="form">
-                <br>
-                <label for="cpf">Cpf</label>
-                <br>
-                <input type="text" name="cpf" id="cpf">
-                <br>
-                <label for="email">E-mail</label>
-                <br>
-                <input type="text" name="email" id="email">
-                <br>
-                <br>
-                <input type="submit" value="Entrar">
-            </div>
+        <div class="form">
+            <br>
+            <label for="cpf">Cpf</label>
+            <br>
+            <input type="text" name="cpf" id="cpf">
+            <br>
+            <label for="email">E-mail</label>
+            <br>
+            <input type="text" name="email" id="email">
+            <br>
+            <br>
+            <input class="comprar-botao" type="submit" value="Entrar">
+        </div>
         </div>
     </form>
     <br>
