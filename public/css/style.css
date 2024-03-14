@@ -3,6 +3,10 @@
   text-align: left;
 }
 
+body {
+  font-family: Arial, sans-serif;
+}
+
 .form {
   border-radius: 5px;
   margin: 20px auto;
@@ -39,11 +43,6 @@ a {
   display: block;
   margin-top: 10px;
   text-align: center;
-}
-
-body {
-  font-family: Arial;
-  /* background-image: url("../Images/5fb066ec8a0edd8e5aa8b4f2ed1b2e8e.jpg"); */
 }
 
 h1 {
