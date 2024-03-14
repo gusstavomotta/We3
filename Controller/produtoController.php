@@ -51,7 +51,6 @@ function retorna_carrinho_de_compras_sessao()
         $produtosSelecionados = $_POST['produto'];
         $listaProdutos = filtrar_produtos();
         $produto = serialize(retorna_produto_por_id($listaProdutos, $produtosSelecionados));
-        var_dump($produto);
         array_push($_SESSION['produtos'], $produto);
     }
 

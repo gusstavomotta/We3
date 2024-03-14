@@ -15,11 +15,11 @@ if (isset($_SESSION["mensagem_erro"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css">
-    <title>Pagina Inicial</title>
+    <title>Login</title>
 </head>
 
 <body>
-    <h1>Cine Imply</h1>
+    <h1>Login</h1>
     <form action="../Controller/loginController.php" method="post">
         <div class="body-login">
             <div class="form">

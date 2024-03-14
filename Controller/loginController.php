@@ -19,9 +19,9 @@ function verifica_e_redireciona_usuario(String $cpf, String $email)
         $_SESSION["id"] = $usuario->get_id_pessoa();
         $_SESSION["nome"] = $usuario->get_nome();
 
-        header("Location: ../views/blistaDeProdutos.php");
+        header("Location: ../views/paginaInicial.php");
     } else {
         $_SESSION["mensagem_erro"] = "Email ou CPF inválidos, tente novamente!";
-        header("Location: ../views/apaginaInicial.php");
+        header("Location: ../views/paginaLogin.php");
     }
 }

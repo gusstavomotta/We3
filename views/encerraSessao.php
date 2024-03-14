@@ -8,4 +8,4 @@ unset($_SESSION['nome']);
 unset($_SESSION['id']);
 sleep(2);
 
-header("Location: ../views/apaginaInicial.php");
+header("Location: ../views/paginaInicial.php");

@@ -3,7 +3,7 @@ require __DIR__ . "/../Controller/produtoController.php";
 session_start();
 
 if (!isset($_SESSION['cpf']) || !isset($_SESSION['email'])) {
-    header("Location: ../views/apaginaInicial.php");
+    header("Location: ../views/paginaLogin.php");
 }
 ?>
 
@@ -40,11 +40,13 @@ if (!isset($_SESSION['cpf']) || !isset($_SESSION['email'])) {
             ?>
         </div>
 
-        <input type="submit" value="Visualizar Carrinho">
+        <!-- <input type="submit" value="Visualizar Carrinho"> -->
     </form>
 
     <a href="/views/carrinhoDeCompras.php">Ir ao carrinho</a>
     <a href="/views/encerraSessao.php">Encerrar sessão</a>
+    <a href="/views/paginaInicial.php">Voltar</a>
+
 
 </body>
 
