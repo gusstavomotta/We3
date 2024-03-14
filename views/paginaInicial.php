@@ -7,6 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css">
+    <style>  
+    body{
+        background-image: url("../public/Images/cdf7175d038ff9397b7666349e552924.jpg");
+    }
+    </style>
     <title>Pagina inicial | Filmes </title>
 </head>
 

@@ -23,6 +23,11 @@ $lista_de_produtos = $_SESSION['lista_de_produtos'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css">
+    <style>  
+    body{
+        background-image: url("../public/Images/5fb066ec8a0edd8e5aa8b4f2ed1b2e8e.jpg");
+    }
+    </style>
     <title>Venda de Produtos</title>
 </head>
 
